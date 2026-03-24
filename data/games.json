@@ -1,0 +1,776 @@
+[
+  {
+    "id": "hot-wheels-race-off",
+    "title": "Hot Wheels: Race Off",
+    "title_kz": "Хот Уилс: Жарыстан Озу",
+    "description_kz": "Әлемдегі ең жылдам Hot Wheels көліктерімен қауіпті трассаларда жарысқа шық! Тік жартасты жолдар, ауа секірулері және шексіз адреналин.",
+    "category": "жарыс",
+    "tags": [
+      "машина",
+      "жарыс",
+      "жылдамдық",
+      "hot wheels"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/hot-wheels-race-off",
+    "source_url": "https://www.madkidgames.com/game/hot-wheels-race-off",
+    "thumbnail": "https://www.madkidgames.com/games/hot-wheels-race-off/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "ultimate-car-driving-simulator",
+    "title": "Ultimate Car Driving Simulator",
+    "title_kz": "Көлік Жүргізу Симуляторы",
+    "description_kz": "Нақты физикасы бар ашық әлемде арманыңдағы көлікті жүргіз! Түрлі көліктерді таңда, трассаларды зерттей және шеберлігіңді дамыт.",
+    "category": "жарыс",
+    "tags": [
+      "машина",
+      "симулятор",
+      "ашық әлем",
+      "жүргізу"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/ultimate-car-driving-simulator",
+    "source_url": "https://www.madkidgames.com/game/ultimate-car-driving-simulator",
+    "thumbnail": "https://www.madkidgames.com/games/ultimate-car-driving-simulator/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "offroad-outlaws",
+    "title": "Offroad Outlaws",
+    "title_kz": "Офроуд Аутлавс: Бездорожье",
+    "description_kz": "Ең қатал бездорожьеде жарыс! Тауларды, батпақты жолдарды және тас асуларды жеңіп өт. Нақты физикасы бар ең шытырман офроуд жарысы.",
+    "category": "жарыс",
+    "tags": [
+      "офроуд",
+      "жарыс",
+      "бездорожье",
+      "ұлдар",
+      "машина"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/offroad-outlaws",
+    "source_url": "https://www.madkidgames.com/game/offroad-outlaws",
+    "thumbnail": "https://www.madkidgames.com/games/offroad-outlaws/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "survivor-io",
+    "title": "Survivor.io",
+    "title_kz": "Сурвайвор: Тірі Қал",
+    "description_kz": "Жауларың толып жатыр — тірі қал! Кейіпкеріңді прокачай, қаруды жақсарт және шексіз толқындарда аман қал.",
+    "category": "атыс",
+    "tags": [
+      "шутер",
+      "экшн",
+      "тірі қалу",
+      "ұлдар",
+      "прокачка"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/survivor-io",
+    "source_url": "https://www.madkidgames.com/game/survivor-io",
+    "thumbnail": "https://www.madkidgames.com/games/survivor-io/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "атыс",
+      "ұлдарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "mmx-hill-dash",
+    "title": "MMX Hill Dash",
+    "title_kz": "MMX Хилл Дэш: Төбе Жарысы",
+    "description_kz": "Монстр-трак пен квадроциклдерде ең тік төбелерді бағындыр! Физикалық сынақтар, апатты жолдар және шексіз адреналин.",
+    "category": "жарыс",
+    "tags": [
+      "монстр-трак",
+      "жарыс",
+      "төбе",
+      "ұлдар",
+      "физика"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/mmx-hill-dash",
+    "source_url": "https://www.madkidgames.com/game/mmx-hill-dash",
+    "thumbnail": "https://www.madkidgames.com/games/mmx-hill-dash/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "pepi-house-happy-family",
+    "title": "Pepi House: Happy Family",
+    "title_kz": "Пепи Үй: Бақытты Отбасы",
+    "description_kz": "Пепи отбасымен бірге ойна! Үйді безенд, отбасы мүшелерімен ойнақта, әртүрлі бөлмелерді зерттей. Шексіз қиял мен қызық!",
+    "category": "қыздарға",
+    "tags": [
+      "балалар",
+      "отбасы",
+      "үй",
+      "қыздар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/pepi-house-happy-family",
+    "source_url": "https://www.madkidgames.com/game/pepi-house-happy-family",
+    "thumbnail": "https://www.madkidgames.com/games/pepi-house-happy-family/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "pepi-hospital-learn-and-care",
+    "title": "Pepi Hospital: Learn & Care",
+    "title_kz": "Пепи Аурухана: Үйрен және Күт",
+    "description_kz": "Дәрігер болуды армандайсың ба? Пепи Ауруханасында науқастарды ем, операция жаса және медицина әлемін зерттей!",
+    "category": "қыздарға",
+    "tags": [
+      "аурухана",
+      "дәрігер",
+      "балалар",
+      "қыздар",
+      "оқу"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/pepi-hospital-learn-and-care",
+    "source_url": "https://www.madkidgames.com/game/pepi-hospital-learn-and-care",
+    "thumbnail": "https://www.madkidgames.com/games/pepi-hospital-learn-and-care/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада",
+      "басқату"
+    ]
+  },
+  {
+    "id": "pepi-super-stores-fun-games",
+    "title": "Pepi Super Stores: Fun & Games",
+    "title_kz": "Пепи Дүкен: Қызықты Ойындар",
+    "description_kz": "Үлкен сауда орталығында дүкен ашып, сатушы бол! Тауарларды орна, клиенттерге қызмет көрсет және өзіңнің бизнесіңді дамыт.",
+    "category": "қыздарға",
+    "tags": [
+      "дүкен",
+      "бизнес",
+      "симулятор",
+      "қыздар",
+      "балалар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/pepi-super-stores-fun-games",
+    "source_url": "https://www.madkidgames.com/game/pepi-super-stores-fun-games",
+    "thumbnail": "https://www.madkidgames.com/games/pepi-super-stores-fun-games/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "happy-daycare-stories-school",
+    "title": "Happy Daycare Stories - School",
+    "title_kz": "Бақытты Балабақша: Мектеп Оқиғалары",
+    "description_kz": "Балабақшада мұғалім бол! Балаларға сабақ бер, ойнат, тамақтандыр және олармен бірге мектеп өмірін зерттей.",
+    "category": "қыздарға",
+    "tags": [
+      "балабақша",
+      "мектеп",
+      "мұғалім",
+      "қыздар",
+      "балалар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/happy-daycare-stories-school",
+    "source_url": "https://www.madkidgames.com/game/happy-daycare-stories-school",
+    "thumbnail": "https://www.madkidgames.com/games/happy-daycare-stories-school/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "dune-tiny-wings",
+    "title": "Dune Tiny Wings",
+    "title_kz": "Дюна: Кішкентай Қанаттар",
+    "description_kz": "Шағын құспен құмды дюналар арқылы ұш! Ырғақты басқару мен дәл уақытпен максималды жылдамдыққа жет. Досыңмен бірге жарыс!",
+    "category": "екеуіне",
+    "tags": [
+      "екі ойыншы",
+      "жарыс",
+      "ұшу",
+      "дос",
+      "аркада"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/dune-tiny-wings",
+    "source_url": "https://www.madkidgames.com/game/dune-tiny-wings",
+    "thumbnail": "https://www.madkidgames.com/games/dune-tiny-wings/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "екеуіне",
+      "аркада",
+      "жарыс"
+    ]
+  },
+  {
+    "id": "free-kick-football-3d-soccer",
+    "title": "Free Kick Football: 3D Soccer",
+    "title_kz": "Бос Соққы: 3D Футбол",
+    "description_kz": "Досыңмен немесе CPU-мен футбол ойна! Бос соққыларды жаттықтыр, голкипермен беттес және чемпион бол.",
+    "category": "спорт",
+    "tags": [
+      "футбол",
+      "спорт",
+      "екі ойыншы",
+      "3D",
+      "дос"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/free-kick-football-3d-soccer",
+    "source_url": "https://www.madkidgames.com/game/free-kick-football-3d-soccer",
+    "thumbnail": "https://www.madkidgames.com/games/free-kick-football-3d-soccer/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "спорт",
+      "екеуіне",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "world-cricket-championship-lte",
+    "title": "World Cricket Championship Lte",
+    "title_kz": "Әлем Крикет Чемпионаты",
+    "description_kz": "Крикеттің ең үздік ойынына қош келдің! Өз командаңды құр, турнирлерде жарыс және Әлем Чемпионы атағын жеңіп ал.",
+    "category": "спорт",
+    "tags": [
+      "крикет",
+      "спорт",
+      "чемпионат",
+      "команда"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/world-cricket-championship-lte",
+    "source_url": "https://www.madkidgames.com/game/world-cricket-championship-lte",
+    "thumbnail": "https://www.madkidgames.com/games/world-cricket-championship-lte/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "спорт",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "mineclicker-idle-minecraft-clicker",
+    "title": "MineClicker: Idle Minecraft Clicker",
+    "title_kz": "МайнКликер: Майнкрафт Кликері",
+    "description_kz": "Майнкрафт әлемінде блоктарды қазып байлыққа бат! Ресурстарды жина, базаны дамыт және idle режимінде де табыс тап.",
+    "category": "аркада",
+    "tags": [
+      "майнкрафт",
+      "кликер",
+      "idle",
+      "аркада",
+      "ресурс"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/mineclicker-idle-minecraft-clicker",
+    "source_url": "https://www.madkidgames.com/game/mineclicker-idle-minecraft-clicker",
+    "thumbnail": "https://www.madkidgames.com/games/mineclicker-idle-minecraft-clicker/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "аркада",
+      "басқату"
+    ]
+  },
+  {
+    "id": "ultimate-motorcycle-simulator",
+    "title": "Ultimate Motorcycle Simulator",
+    "title_kz": "Мотоцикл Жүргізу Симуляторы",
+    "description_kz": "Арманыңдағы мотоциклді мін және ашық әлемде еркін жүр! Нақты физикасы бар трассаларда шеберлігіңді дамыт, каскадерлік трюктер жасап, жылдамдық рекордтарын жеңіп ал.",
+    "category": "жарыс",
+    "tags": [
+      "мотоцикл",
+      "симулятор",
+      "жарыс",
+      "трюк",
+      "жүргізу"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/ultimate-motorcycle-simulator",
+    "source_url": "https://www.madkidgames.com/game/ultimate-motorcycle-simulator",
+    "thumbnail": "https://www.madkidgames.com/games/ultimate-motorcycle-simulator/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "sunny-school-stories",
+    "title": "Sunny School Stories",
+    "title_kz": "Күнгей Мектеп Оқиғалары",
+    "description_kz": "Мектеп өміріне кір! Сыныпта сабақ бер, достарыңмен үзіліс кезінде ойна, асханада тамақтан және мектептің әр бұрышын зерттей. Қыздарға арналған ең жылы мектеп ойыны!",
+    "category": "қыздарға",
+    "tags": [
+      "мектеп",
+      "оқу",
+      "қыздар",
+      "балалар",
+      "достар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/sunny-school-stories",
+    "source_url": "https://www.madkidgames.com/game/sunny-school-stories",
+    "thumbnail": "https://www.madkidgames.com/games/sunny-school-stories/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "truck-simulator-ultimate-3d",
+    "title": "Truck Simulator Ultimate 3D",
+    "title_kz": "Жүк Машинасы Симуляторы 3D",
+    "description_kz": "Алып жүк машинасын айдап, қалалар арасында жүктерді жеткіз! Нақты 3D графикасы, ұзын трассалар және күрделі жол жағдайлары. Ұлдарға арналған ең шынайы трак симуляторы!",
+    "category": "жарыс",
+    "tags": [
+      "жүк машинасы",
+      "симулятор",
+      "3D",
+      "ұлдар",
+      "жол"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/truck-simulator-ultimate-3d",
+    "source_url": "https://www.madkidgames.com/game/truck-simulator-ultimate-3d",
+    "thumbnail": "https://www.madkidgames.com/games/truck-simulator-ultimate-3d/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ]
+  },
+  {
+    "id": "my-town-preschool-kids-game",
+    "title": "My Town: Preschool Kids Game",
+    "title_kz": "Менің Қалам: Балабақша Ойыны",
+    "description_kz": "Өз қалаңды құр және балабақшада ойна! Достарыңмен бірге сурет сал, ән ай, ойнақта. Кішкентай балаларға арналған ең қауіпсіз және қызықты оқу ойыны!",
+    "category": "қыздарға",
+    "tags": [
+      "балабақша",
+      "қала",
+      "балалар",
+      "қыздар",
+      "оқу"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-preschool-kids-game",
+    "source_url": "https://www.madkidgames.com/game/my-town-preschool-kids-game",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-preschool-kids-game/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "royal-battletown-gta-game",
+    "title": "Royal Battletown: GTA Game",
+    "title_kz": "Роял Баттлтаун: GTA Ойыны",
+    "description_kz": "Ашық қалада еркін ойна! Машина айда, тапсырмаларды орында, полициядан қаш және қаланың барлық бұрышын зерттей. Ұлдарға арналған ең қызықты GTA стилі экшн!",
+    "category": "атыс",
+    "tags": [
+      "gta",
+      "экшн",
+      "ашық әлем",
+      "ұлдар",
+      "машина"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/royal-battletown-gta-game",
+    "source_url": "https://www.madkidgames.com/game/royal-battletown-gta-game",
+    "thumbnail": "https://www.madkidgames.com/games/royal-battletown-gta-game/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "атыс",
+      "ұлдарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "jurassic-world-simulator",
+    "title": "Jurassic World Simulator",
+    "title_kz": "Юрасик Әлем Симуляторы",
+    "description_kz": "Динозаврлар әлемін зерттей! Алып тираннозавр мен рапторларды басқар, аралды зерттей және ең қауіпті жыртқыштармен беттес. Ұлдарға арналған ең шытырман динозавр ойыны!",
+    "category": "ұлдарға",
+    "tags": [
+      "динозавр",
+      "симулятор",
+      "ұлдар",
+      "юрасик",
+      "жыртқыш"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/jurassic-world-simulator",
+    "source_url": "https://www.madkidgames.com/game/jurassic-world-simulator",
+    "thumbnail": "https://www.madkidgames.com/games/jurassic-world-simulator/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0,
+    "categories": [
+      "ұлдарға",
+      "аркада"
+    ]
+  },
+  {
+    "id": "my-town-school",
+    "title": "My Town: School",
+    "title_kz": "Менің Қалам: Мектеп",
+    "description_kz": "Өз мектебіңді ашып, оқушыларға сабақ бер! Сыныпты безенд, мұғалім бол, балалармен бірге ойна және мектеп өмірінің барлық қызығын зерттей. Қыздарға арналған ең сүйікті ойын!",
+    "category": "қыздарға",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "tags": [
+      "мектеп",
+      "мұғалім",
+      "балалар",
+      "қыздар",
+      "оқу",
+      "қала"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-school",
+    "source_url": "https://www.madkidgames.com/game/my-town-school",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-school/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "my-town-hospital-doctor-game",
+    "title": "My Town Hospital – Doctor Game",
+    "title_kz": "Менің Қалам: Аурухана — Дәрігер Ойыны",
+    "description_kz": "Ауруханада дәрігер бол! Науқастарды қабылда, диагноз қой, операция жаса және барлық бөлімдерді зерттей. Қыздарға арналған ең шынайы медицина симуляторы!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "аурухана",
+      "дәрігер",
+      "медицина",
+      "қыздар",
+      "симулятор"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-hospital-doctor-game",
+    "source_url": "https://www.madkidgames.com/game/my-town-hospital-doctor-game",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-hospital-doctor-game/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "grow-empire-rome",
+    "title": "Grow Empire: Rome",
+    "title_kz": "Рим Империясын Өсір",
+    "description_kz": "Рим империясын нөлден құр! Армия жина, қалаларды жаула, қорғанысты нығайт және ең қуатты империяны бар. Стратегия мен шайқасты сүйетіндерге арналған эпикалық ойын!",
+    "categories": [
+      "басқату",
+      "ұлдарға",
+      "аркада"
+    ],
+    "category": "басқату",
+    "tags": [
+      "стратегия",
+      "рим",
+      "империя",
+      "шайқас",
+      "ұлдар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/grow-empire-rome",
+    "source_url": "https://www.madkidgames.com/game/grow-empire-rome",
+    "thumbnail": "https://www.madkidgames.com/games/grow-empire-rome/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "outlets-rush-3d-idle-tycoon",
+    "title": "Outlets Rush 3D Idle Tycoon",
+    "title_kz": "Дүкен Тайкун: 3D Idle",
+    "description_kz": "Өз сауда империяңды тұрғыз! Дүкендер аш, кассирлерді жалда, табысыңды өсір және алып тайкунға айнал. Idle режимінде де ақша тауып отыратын ең қызықты бизнес симуляторы!",
+    "categories": [
+      "аркада",
+      "басқату"
+    ],
+    "category": "аркада",
+    "tags": [
+      "тайкун",
+      "бизнес",
+      "idle",
+      "дүкен",
+      "3D"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/outlets-rush-3d-idle-tycoon",
+    "source_url": "https://www.madkidgames.com/game/outlets-rush-3d-idle-tycoon",
+    "thumbnail": "https://www.madkidgames.com/games/outlets-rush-3d-idle-tycoon/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "my-town-beauty-contest",
+    "title": "My Town: Beauty Contest",
+    "title_kz": "Менің Қалам: Сұлулық Байқауы",
+    "description_kz": "Сұлулық байқауына дайындал! Кейіпкерлерді киіндір, безенд, сахнада жарқыра және бірінші орынды жеңіп ал. Қыздарға арналған ең сәнді және керемет ойын!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "сұлулық",
+      "сән",
+      "байқау",
+      "қыздар",
+      "безендіру"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-beauty-contest",
+    "source_url": "https://www.madkidgames.com/game/my-town-beauty-contest",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-beauty-contest/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "my-town-stores",
+    "title": "My Town: Stores",
+    "title_kz": "Менің Қалам: Дүкендер",
+    "description_kz": "Қаладағы барлық дүкендерді зерттей! Азық-түлік дүкені, киім бутигі, шаштараз — барлығын ашып, клиенттерге қызмет көрсет. Балалар мен қыздарға арналған қызықты симулятор!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "дүкен",
+      "қала",
+      "қыздар",
+      "симулятор",
+      "бизнес"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-stores",
+    "source_url": "https://www.madkidgames.com/game/my-town-stores",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-stores/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "flat-zombies-defense-and-cleanup",
+    "title": "Flat Zombies: Defense & Cleanup",
+    "title_kz": "Жалпақ Зомбилер: Қорғаныс",
+    "description_kz": "Зомби шабуылынан қорған! Қаруды таңда, бекіністі нығайт және толқын-толқын зомбилерді жой. Қорқынышты атмосфера мен шексіз экшн — батыл ойыншыларға арналған!",
+    "categories": [
+      "атыс",
+      "қорқынышты",
+      "ұлдарға"
+    ],
+    "category": "атыс",
+    "tags": [
+      "зомби",
+      "қорғаныс",
+      "атыс",
+      "қорқынышты",
+      "ұлдар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/flat-zombies-defense-and-cleanup",
+    "source_url": "https://www.madkidgames.com/game/flat-zombies-defense-and-cleanup",
+    "thumbnail": "https://www.madkidgames.com/games/flat-zombies-defense-and-cleanup/thumb_2.jpg",
+    "featured": true,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "daily-shopping-stories",
+    "title": "Daily Shopping Stories",
+    "title_kz": "Күнделікті Сауда Оқиғалары",
+    "description_kz": "Күнделікті сауда жасаудың қызығын тап! Дүкендерге кір, тауарларды таңда, кассада төле және үйге жеткіз. Қыздарға арналған ең шынайы күнделікті өмір симуляторы!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "сауда",
+      "дүкен",
+      "күнделік",
+      "қыздар",
+      "симулятор"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/daily-shopping-stories",
+    "source_url": "https://www.madkidgames.com/game/daily-shopping-stories",
+    "thumbnail": "https://www.madkidgames.com/games/daily-shopping-stories/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "my-town-daycare-game",
+    "title": "My Town: Daycare Game",
+    "title_kz": "Менің Қалам: Балабақша",
+    "description_kz": "Балабақшада тәрбиеші бол! Нәрестелерге қам жаса, ойнат, тамақтандыр және ұйықтат. Жауапкершілік пен мейірімділікті үйрететін балаларға арналған ең жылы ойын!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "балабақша",
+      "нәресте",
+      "тәрбиеші",
+      "қыздар",
+      "балалар"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/my-town-daycare-game",
+    "source_url": "https://www.madkidgames.com/game/my-town-daycare-game",
+    "thumbnail": "https://www.madkidgames.com/games/my-town-daycare-game/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "dr-panda-town-vacation",
+    "title": "Dr. Panda Town: Vacation",
+    "title_kz": "Доктор Панда: Демалыс",
+    "description_kz": "Панда қаласында демалысқа шық! Бассейнде жүз, пляжда ойна, мейрамханада тамақтан және жаңа достар тап. Балалар мен қыздарға арналған ең қызықты демалыс ойыны!",
+    "categories": [
+      "қыздарға",
+      "аркада"
+    ],
+    "category": "қыздарға",
+    "tags": [
+      "панда",
+      "демалыс",
+      "балалар",
+      "қыздар",
+      "қала"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/dr-panda-town-vacation",
+    "source_url": "https://www.madkidgames.com/game/dr-panda-town-vacation",
+    "thumbnail": "https://www.madkidgames.com/games/dr-panda-town-vacation/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "stickman-world-battle",
+    "title": "Stickman World Battle",
+    "title_kz": "Стикмен: Әлем Шайқасы",
+    "description_kz": "Стикмен жауынгерімен дүниежүзілік шайқасқа шық! Түрлі қарумен жауларды жеңіп, командаңды күшейт. Ұлдарға арналған ең қызықты экшн-шайқас ойыны!",
+    "categories": [
+      "атыс",
+      "ұлдарға",
+      "аркада"
+    ],
+    "category": "атыс",
+    "tags": [
+      "стикмен",
+      "шайқас",
+      "экшн",
+      "ұлдар",
+      "жауынгер"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/stickman-world-battle",
+    "source_url": "https://www.madkidgames.com/game/stickman-world-battle",
+    "thumbnail": "https://www.madkidgames.com/games/stickman-world-battle/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "stunt-bike-extreme",
+    "title": "Stunt Bike Extreme",
+    "title_kz": "Экстремалды Трюк Велосипеді",
+    "description_kz": "Ең қауіпті трассаларда велосипедпен трюктер жаса! Тік жартастар, ауадағы секірулер және жарылыс аттракциондары. Ұлдарға арналған ең шытырман экстремалды ойын!",
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ],
+    "category": "жарыс",
+    "tags": [
+      "велосипед",
+      "трюк",
+      "экстремал",
+      "ұлдар",
+      "секіру"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/stunt-bike-extreme",
+    "source_url": "https://www.madkidgames.com/game/stunt-bike-extreme",
+    "thumbnail": "https://www.madkidgames.com/games/stunt-bike-extreme/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  },
+  {
+    "id": "demolition-derby-2",
+    "title": "Demolition Derby 2",
+    "title_kz": "Демолишн Дерби 2: Металл Майданы",
+    "description_kz": "Аренаға кір және барлық бәсекелестерді талқандай! Көліктерді соқтырыстыр, жарылыстар жасап, ең соңғы тірі қалған бол. Ұлдарға арналған ең зорлықты және адреналинді жарыс!",
+    "categories": [
+      "жарыс",
+      "ұлдарға"
+    ],
+    "category": "жарыс",
+    "tags": [
+      "дерби",
+      "соқтырыс",
+      "машина",
+      "ұлдар",
+      "арена"
+    ],
+    "embed_url": "https://www.madkidgames.com/full/demolition-derby-2",
+    "source_url": "https://www.madkidgames.com/game/demolition-derby-2",
+    "thumbnail": "https://www.madkidgames.com/games/demolition-derby-2/thumb_2.jpg",
+    "featured": false,
+    "date_added": "2026-03-23",
+    "plays": 0
+  }
+]

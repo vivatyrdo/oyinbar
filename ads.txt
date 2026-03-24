@@ -1,0 +1,3 @@
+# OyinBar - ads.txt
+# Required for MadKidGames embed support
+google.com, pub-2328712687113561, DIRECT, f08c47fec0942fa0

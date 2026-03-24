@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">OyinBar — Ойындар</title>
+  <meta id="metaDesc" name="description" content="" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" id="canonicalUrl" href="https://oyinbar.space/" />
+  <meta id="ogTitle" property="og:title" content="" />
+  <meta id="ogDesc" property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="kk_KZ" />
+  <meta property="og:site_name" content="OyinBar" />
+  <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
+  <meta name="geo.region" content="KZ" />
+  <meta name="google-site-verification" content="wFs14HmKxjq_5_4Vq9z_zBixEwEBiwobp7Pn8950-W0" />
+  <meta name="yandex-verification" content="3f8b873c86e48e09" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#4fc3f7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans+KR:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans+KR:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XLN96J46LP');
+  </script>
+
+  <style>
+    :root {
+      --bg-primary: #0f1117;
+      --bg-secondary: #161b26;
+      --bg-card: #1c2333;
+      --bg-card-hover: #222d42;
+      --accent: #4fc3f7;
+      --accent-glow: rgba(79,195,247,0.25);
+      --text-primary: #e8eaf0;
+      --text-secondary: #8b9ab5;
+      --text-muted: #4a5568;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(79,195,247,0.3);
+      --cat-жарыс: #ff6b35;
+      --cat-атыс: #e53935;
+      --cat-басқату: #7c4dff;
+      --cat-спорт: #43a047;
+      --cat-қорқынышты: #6a1b9a;
+      --cat-аркада: #f9a825;
+      --cat-қыздарға: #e91e8c;
+      --cat-ұлдарға: #1e88e5;
+      --cat-екеуіне: #00acc1;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,23,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 20px; height: 64px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .logo { font-family: 'Rajdhani', sans-serif; font-size: 28px; font-weight: 700; text-decoration: none; color: var(--text-primary); letter-spacing: 2px; }
+    .logo span { color: var(--accent); }
+    .back-btn {
+      margin-left: auto; display: flex; align-items: center; gap: 6px;
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--bg-card); transition: all 0.2s;
+    }
+    .back-btn:hover { color: var(--text-primary); border-color: var(--border-accent); }
+
+    .cat-hero {
+      padding: 48px 20px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-hero::before {
+      content: '';
+      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px;
+      background: radial-gradient(ellipse, var(--cat-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cat-badge-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 18px; border-radius: 20px;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+      border: 1px solid; margin-bottom: 16px;
+    }
+    .cat-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .cat-hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 700; letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .cat-hero p { font-size: 15px; color: var(--text-secondary); max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px 60px; }
+
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .section-title { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 1px; }
+    .games-count { font-size: 13px; color: var(--text-muted); }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+      content-visibility: auto;
+    }
+    .game-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; text-decoration: none;
+      color: inherit; display: block;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      contain: layout style;
+      animation: fadeInUp 0.4s ease both;
+    }
+    .game-card:hover { transform: translateY(-4px); border-color: var(--border-accent); box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px var(--accent-glow); }
+    .game-card.featured::after { content: '★ ТОП'; position: absolute; top: 10px; right: 10px; background: var(--accent); color: #0f1117; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
+    .card-thumb { width: 100%; aspect-ratio: 4/3; background: var(--bg-secondary); position: relative; overflow: hidden; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .game-card:hover .card-thumb img { transform: scale(1.05); }
+    .thumb-placeholder { width: 100%; height: 100%; display: none; align-items: center; justify-content: center; background: var(--bg-secondary); }
+    .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s; }
+    .game-card:hover .play-overlay { opacity: 1; }
+    .play-btn-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px var(--accent-glow); }
+    .play-btn-icon svg { width: 22px; height: 22px; fill: #0f1117; margin-left: 3px; }
+    .card-body { padding: 10px 12px 12px; }
+    .card-cats { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+    .card-cat { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
+    .card-cat-sm { opacity: 0.7; font-size: 10px; }
+    .card-title { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.25; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .card-play-btn { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.5px; }
+
+    /* Category nav */
+    .cat-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .cat-nav-btn {
+      padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-secondary);
+      font-size: 12px; font-family: inherit; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .cat-nav-btn:hover, .cat-nav-btn.active { border-color: var(--border-accent); color: var(--text-primary); background: var(--bg-card-hover); }
+
+    /* Pagination */
+    #pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 40px; flex-wrap: wrap; }
+    .page-btn { min-width: 38px; height: 38px; padding: 0 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 14px; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+    .page-btn:hover:not(:disabled) { border-color: var(--border-accent); color: var(--text-primary); }
+    .page-btn.active { background: var(--accent); border-color: var(--accent); color: #0f1117; font-weight: 700; }
+    .page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .page-ellipsis { color: var(--text-muted); padding: 0 4px; }
+
+    /* SEO text */
+    .cat-seo { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .cat-seo h2 { font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
+    .cat-seo p { font-size: 13px; color: var(--text-muted); line-height: 1.8; max-width: 800px; }
+
+    /* Cat colors */
+    [data-cat="жарыс"] { color: var(--cat-жарыс); border-color: var(--cat-жарыс) !important; }
+    [data-cat="атыс"] { color: var(--cat-атыс); border-color: var(--cat-атыс) !important; }
+    [data-cat="басқату"] { color: var(--cat-басқату); border-color: var(--cat-басқату) !important; }
+    [data-cat="спорт"] { color: var(--cat-спорт); border-color: var(--cat-спорт) !important; }
+    [data-cat="қорқынышты"] { color: var(--cat-қорқынышты); border-color: var(--cat-қорқынышты) !important; }
+    [data-cat="аркада"] { color: var(--cat-аркада); border-color: var(--cat-аркада) !important; }
+    [data-cat="қыздарға"] { color: var(--cat-қыздарға); border-color: var(--cat-қыздарға) !important; }
+    [data-cat="ұлдарға"] { color: var(--cat-ұлдарға); border-color: var(--cat-ұлдарға) !important; }
+    [data-cat="екеуіне"] { color: var(--cat-екеуіне); border-color: var(--cat-екеуіне) !important; }
+    .dot-жарыс{background:var(--cat-жарыс)} .dot-атыс{background:var(--cat-атыс)} .dot-басқату{background:var(--cat-басқату)} .dot-спорт{background:var(--cat-спорт)} .dot-қорқынышты{background:var(--cat-қорқынышты)} .dot-аркада{background:var(--cat-аркада)} .dot-қыздарға{background:var(--cat-қыздарға)} .dot-ұлдарға{background:var(--cat-ұлдарға)} .dot-екеуіне{background:var(--cat-екеуіне)}
+
+    footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 2px; margin-bottom: 6px; }
+    .footer-logo span { color: var(--accent); }
+    .footer-text { font-size: 12px; color: var(--text-muted); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .game-card { animation: none; } }
+    @media (max-width: 768px) { .games-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; } .card-desc { display: none; } }
+    @media (max-width: 480px) { .games-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">OYIN<span>BAR</span></a>
+    <a href="/" class="back-btn">← Барлық ойындар</a>
+  </div>
+</header>
+
+<div class="cat-hero">
+  <div class="cat-badge-hero" id="catBadgeHero" data-cat="">
+    <span class="cat-dot" id="heroDot"></span>
+    <span id="heroLabel"></span>
+  </div>
+  <h1 id="heroTitle"></h1>
+  <p id="heroDesc"></p>
+</div>
+
+<div class="page-wrap">
+
+  <!-- Other categories nav -->
+  <nav class="cat-nav" id="catNav"></nav>
+
+  <div class="section-header">
+    <h2 class="section-title" id="sectionTitle"></h2>
+    <span class="games-count" id="gamesCount"></span>
+  </div>
+
+  <div class="games-grid" id="gamesGrid"></div>
+  <div id="pagination"></div>
+
+  <!-- SEO text -->
+  <div class="cat-seo" id="catSeo"></div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">OYIN<span>BAR</span></div>
+  <p class="footer-text">© 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар</p>
+</footer>
+
+<script>
+const GAMES_PER_PAGE = 20;
+
+const CATEGORY_NAMES = {
+  'жарыс': 'Жарыс ойындары', 'атыс': 'Атыс ойындары', 'басқату': 'Басқату ойындары',
+  'спорт': 'Спорт ойындары', 'қорқынышты': 'Қорқынышты ойындар', 'аркада': 'Аркада ойындары',
+  'қыздарға': 'Қыздарға арналған ойындар', 'ұлдарға': 'Ұлдарға арналған ойындар',
+  'екеуіне': 'Екеуіне арналған ойындар'
+};
+
+const CATEGORY_NAMES_SHORT = {
+  'жарыс': 'Жарыс', 'атыс': 'Атыс', 'басқату': 'Басқату',
+  'спорт': 'Спорт', 'қорқынышты': 'Қорқынышты', 'аркада': 'Аркада',
+  'қыздарға': 'Қыздарға', 'ұлдарға': 'Ұлдарға', 'екеуіне': 'Екеуіне'
+};
+
+const CATEGORY_DESC = {
+  'жарыс': 'Ең жылдам жарыс ойындары — машина, мотоцикл, трак және офроуд. Тегін, тіркелусіз ойна!',
+  'атыс': 'Ең қызықты атыс және экшн ойындары. Зомби, шайқас, шутер — барлығы бір жерде!',
+  'басқату': 'Миыңды жаттықтыр! Стратегия, басқату, idle — ойлайтын ойыншыларға арналған.',
+  'спорт': 'Футбол, крикет және басқа да спорт ойындары. Виртуалды чемпион бол!',
+  'қорқынышты': 'Батыл ойыншыларға арналған қорқынышты ойындар. Жүрегің жетсе кір!',
+  'аркада': 'Классикалық аркада ойындары — қарапайым, қызықты және тез ойнатылады.',
+  'қыздарға': 'Қыздарға арналған ең үздік ойындар — балабақша, аурухана, дүкен, сән және тағы да көп!',
+  'ұлдарға': 'Ұлдарға арналған ең қызықты ойындар — жарыс, атыс, GTA, динозаврлар және экшн!',
+  'екеуіне': 'Досыңмен бірге ойна! Екі ойыншыға арналған ең жақсы мультиплеер ойындар.'
+};
+
+const CATEGORY_SEO = {
+  'жарыс': 'OyinBar-да жарыс ойындарының үлкен жинағы бар. Hot Wheels, Offroad Outlaws, Demolition Derby, MMX Hill Dash және тағы да көптеген тегін жарыс ойындарын браузерде тікелей ойна. Жүктеу немесе тіркелу қажет емес — тек ашып ойна!',
+  'қыздарға': 'OyinBar-да қыздарға арналған ойындардың үлкен жинағы бар. Pepi House, Pepi Hospital, My Town, Happy Daycare және тағы да көптеген танымал ойындар. Балабақша, мектеп, аурухана, дүкен — барлық сүйікті тақырыптар бір жерде!',
+  'ұлдарға': 'Ұлдарға арналған ең қызықты ойындар OyinBar-да. Offroad Outlaws, Survivor.io, Royal Battletown GTA, Jurassic World — экшн, жарыс, шайқас және одан да көп. Тегін, тіркелусіз!',
+  'атыс': 'Атыс ойындарын тегін ойна! Survivor.io, Stickman World Battle, Flat Zombies — ең үздік шутер және экшн ойындары.',
+  'аркада': 'Классикалық аркада ойындары бір жерде. MineClicker, Outlets Rush, Dune Tiny Wings және тағы да көп. Қарапайым басқару, шексіз қызық!',
+  'спорт': 'Спорт ойындарын тегін ойна. Футбол, крикет және басқа да спорт симуляторлары.',
+  'басқату': 'Стратегия және басқату ойындары. Grow Empire Rome, Pepi Hospital — миыңды жаттықтыр!',
+  'екеуіне': 'Досыңмен бірге ойна! Дюна, 3D Футбол — екі ойыншыға арналған тегін ойындар.',
+  'қорқынышты': 'Қорқынышты ойындар батыл ойыншыларға арналған. Зомби, монстрлар — жүрегің жетсе кір!'
+};
+
+const CAT_COLORS = {
+  'жарыс':'#ff6b35','атыс':'#e53935','басқату':'#7c4dff','спорт':'#43a047',
+  'қорқынышты':'#6a1b9a','аркада':'#f9a825','қыздарға':'#e91e8c','ұлдарға':'#1e88e5','екеуіне':'#00acc1'
+};
+
+const params = new URLSearchParams(window.location.search);
+const currentCat = params.get('cat') || 'жарыс';
+let currentPage = 1;
+let allGames = [];
+
+async function init() {
+  const res = await fetch('/data/games.json').catch(() => null);
+  if (!res) return;
+  allGames = await res.json();
+
+  setupMeta();
+  setupCatNav();
+  renderGames();
+}
+
+function setupMeta() {
+  const name = CATEGORY_NAMES[currentCat] || currentCat;
+  const desc = `OyinBar — ${name}. Тегін онлайн ойындар Қазақстанда. Тіркелусіз ойна!`;
+  document.title = `${name} | OyinBar`;
+  document.getElementById('pageTitle').textContent = `${name} | OyinBar`;
+  document.getElementById('metaDesc').content = desc;
+  document.getElementById('ogTitle').content = `${name} | OyinBar`;
+  document.getElementById('ogDesc').content = desc;
+  document.getElementById('canonicalUrl').href = `https://oyinbar.space/category.html?cat=${currentCat}`;
+
+  // Hero
+  const color = CAT_COLORS[currentCat] || '#4fc3f7';
+  document.querySelector('.cat-hero').style.setProperty('--cat-glow', color + '30');
+  const badge = document.getElementById('catBadgeHero');
+  badge.dataset.cat = currentCat;
+  badge.style.color = color;
+  badge.style.borderColor = color;
+  badge.style.background = color + '18';
+  document.getElementById('heroDot').style.background = color;
+  document.getElementById('heroLabel').textContent = CATEGORY_NAMES_SHORT[currentCat] || currentCat;
+  document.getElementById('heroTitle').textContent = CATEGORY_NAMES[currentCat] || currentCat;
+  document.getElementById('heroDesc').textContent = CATEGORY_DESC[currentCat] || '';
+
+  // Schema
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": name,
+    "description": desc,
+    "url": `https://oyinbar.space/category.html?cat=${currentCat}`,
+    "inLanguage": "kk",
+    "isPartOf": { "@type": "WebSite", "name": "OyinBar", "url": "https://oyinbar.space" }
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+}
+
+function setupCatNav() {
+  const nav = document.getElementById('catNav');
+  const cats = Object.keys(CATEGORY_NAMES_SHORT);
+  nav.innerHTML = cats.map(c => `
+    <a href="category.html?cat=${c}" class="cat-nav-btn ${c === currentCat ? 'active' : ''}">${CATEGORY_NAMES_SHORT[c]}</a>
+  `).join('');
+}
+
+function renderGames() {
+  const filtered = allGames.filter(g => (g.categories || [g.category]).includes(currentCat));
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / GAMES_PER_PAGE);
+  if (currentPage > totalPages) currentPage = 1;
+  const games = filtered.slice((currentPage-1)*GAMES_PER_PAGE, currentPage*GAMES_PER_PAGE);
+
+  document.getElementById('sectionTitle').textContent = CATEGORY_NAMES[currentCat];
+  document.getElementById('gamesCount').textContent = `${total} ойын`;
+
+  document.getElementById('gamesGrid').innerHTML = games.map((g, i) => {
+    const cats = g.categories || [g.category];
+    const primary = cats[0];
+    const extra = cats.slice(1, 3);
+    return `
+    <a href="/game.html?id=${g.id}" class="game-card${g.featured ? ' featured' : ''}" style="animation-delay:${i*0.05}s">
+      <div class="card-thumb">
+        <img src="${g.thumbnail}" alt="${g.title_kz}" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="thumb-placeholder"></div>
+        <div class="play-overlay"><div class="play-btn-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cats">
+          <span class="card-cat" data-cat="${primary}"><span class="cat-dot dot-${primary}"></span>${CATEGORY_NAMES_SHORT[primary]||primary}</span>
+          ${extra.map(c=>`<span class="card-cat card-cat-sm" data-cat="${c}"><span class="cat-dot dot-${c}"></span>${CATEGORY_NAMES_SHORT[c]||c}</span>`).join('')}
+        </div>
+        <div class="card-title">${g.title_kz}</div>
+        <div class="card-desc">${g.description_kz}</div>
+        <div class="card-footer"><span class="card-play-btn">▶ ОЙНАУ</span></div>
+      </div>
+    </a>`;
+  }).join('');
+
+  // Pagination
+  const pag = document.getElementById('pagination');
+  if (totalPages <= 1) { pag.innerHTML = ''; }
+  else {
+    let pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      if (i===1||i===totalPages||(i>=currentPage-1&&i<=currentPage+1)) pages.push(i);
+      else if (pages[pages.length-1]!=='...') pages.push('...');
+    }
+    pag.innerHTML = `
+      <button class="page-btn" ${currentPage===1?'disabled':''} data-page="${currentPage-1}">‹</button>
+      ${pages.map(p=>p==='...'?`<span class="page-ellipsis">…</span>`:`<button class="page-btn ${p===currentPage?'active':''}" data-page="${p}">${p}</button>`).join('')}
+      <button class="page-btn" ${currentPage===totalPages?'disabled':''} data-page="${currentPage+1}">›</button>`;
+  }
+
+  // SEO text
+  const seoText = CATEGORY_SEO[currentCat] || '';
+  document.getElementById('catSeo').innerHTML = seoText ? `<h2>${CATEGORY_NAMES[currentCat]}</h2><p>${seoText}</p>` : '';
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.page-btn');
+  if (!btn || btn.disabled) return;
+  currentPage = parseInt(btn.dataset.page);
+  renderGames();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+init();
+</script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108200983','ym');
+    ym(108200983,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108200983" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+
+</body>
+</html>
