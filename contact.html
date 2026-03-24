@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кері байланыс — OyinBar</title>
+  
+  <meta name="description" content="OyinBar онлайн ойындар порталымен байланысу. Бізбен хабарласыңыз немесе электрондық поштаға жазыңыз." />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="theme-color" content="#4fc3f7" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-primary: #0f1117;
+      --bg-secondary: #161b26;
+      --bg-card: rgba(28, 35, 51, 0.6);
+      --bg-card-hover: #222d42;
+      --accent: #4fc3f7;
+      --accent-glow: rgba(79, 195, 247, 0.3);
+      --success: #00e676;
+      --text-primary: #e8eaf0;
+      --text-secondary: #8b9ab5;
+      --text-muted: #4a5568;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(79, 195, 247, 0.4);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NOISE TEXTURE */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 23, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+    .logo span { color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      transition: all 0.2s;
+      margin-left: auto;
+    }
+    .back-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-accent);
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: var(--success);
+      color: #0f1117;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 10px 24px;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(0, 230, 118, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* LAYOUT */
+    .contact-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .page-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .page-title span { color: var(--accent); }
+    .page-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 400px;
+    }
+
+    /* LEFT COL: INFO & EMAILS */
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .email-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .email-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent);
+      box-shadow: 0 0 15px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .email-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(79, 195, 247, 0.2);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2), 0 0 20px rgba(79, 195, 247, 0.05);
+    }
+    .email-card:hover::before { opacity: 1; }
+
+    .email-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(79, 195, 247, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .email-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .email-address {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'Noto Sans KR', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: rgba(79, 195, 247, 0.1);
+      color: var(--accent);
+      border-color: var(--border-accent);
+    }
+
+    /* RIGHT COL: FORM */
+    .contact-form-col {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      background: rgba(15, 17, 23, 0.8);
+      box-shadow: 0 0 0 4px rgba(79, 195, 247, 0.1);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--accent);
+      color: #0f1117;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(79, 195, 247, 0.4);
+    }
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .form-success-msg {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeInUp 0.4s ease;
+    }
+    .form-success-msg svg {
+      color: var(--success);
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+    }
+    .form-success-msg h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .form-success-msg p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+      background: var(--bg-primary);
+      margin-top: auto;
+    }
+
+    .footer-inner { max-width: 1400px; margin: 0 auto; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; }
+    .footer-logo span { color: var(--accent); }
+    .footer-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .contact-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .contact-form-col { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">OYIN<span>BAR</span></a>
+    <a href="/" class="back-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Басты бетке
+    </a>
+  </div>
+</header>
+
+<!-- TOAST (Көшірілгені немесе жіберілгені туралы хабарлама) -->
+<div class="toast" id="toastBox">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span id="toastMsg">Көшірілді!</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="contact-wrap">
+  
+  <!-- LEFT: INFO -->
+  <div class="contact-info-col">
+    <div>
+      <h1 class="page-title">Бізбен <span>байланыс</span></h1>
+      <p class="page-desc">
+        Сайтқа қатысты сұрақтарыңыз, ұсыныстарыңыз немесе ынтымақтастық туралы ойларыңыз болса, бізге хабарласыңыз. Біз міндетті түрде жауап береміз!
+      </p>
+    </div>
+
+    <!-- EMAIL CARD 1 -->
+    <div class="email-card">
+      <div class="email-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </div>
+      <div class="email-content">
+        <h3>Жалпы сұрақтар</h3>
+        <div class="email-address" id="email1">musaevmisha3@gmail.com</div>
+        <button class="copy-btn" onclick="copyText('email1')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Көшіру
+        </button>
+      </div>
+    </div>
+
+    <!-- EMAIL CARD 2 -->
+    <div class="email-card">
+      <div class="email-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      </div>
+      <div class="email-content">
+        <h3>Ынтымақтастық / Жарнама</h3>
+        <div class="email-address" id="email2">vivatyrdo@gmail.com</div>
+        <button class="copy-btn" onclick="copyText('email2')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Көшіру
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-form-col">
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Атыңыз</label>
+        <input type="text" id="name" class="form-control" placeholder="Мысалы: Арман" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Электрондық поштаңыз</label>
+        <input type="email" id="email" class="form-control" placeholder="mail@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Тақырып</label>
+        <input type="text" id="subject" class="form-control" placeholder="Не туралы жазбақсыз?" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Хабарламаңыз</label>
+        <textarea id="message" class="form-control" placeholder="Хабарламаңызды осында жазыңыз..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        ХАБАРЛАМА ЖІБЕРУ
+      </button>
+    </form>
+
+    <!-- SUCCESS MESSAGE (Hidden by default) -->
+    <div class="form-success-msg" id="successMsg">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+      <h3>Рахмет! Хабарламаңыз жіберілді.</h3>
+      <p>Біз оны міндетті түрде оқып, жақын арада сізбен байланысамыз.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <p class="footer-text">
+      © 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.<br>
+      Барлық ойындар тегін және тіркелусіз қолжетімді.
+    </p>
+  </div>
+</footer>
+
+<script>
+  let toastTimeout;
+
+  // 1. ПОШТАНЫ КӨШІРІП АЛУ ФУНКЦИЯСЫ
+  function copyText(elementId) {
+    const textToCopy = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showToast('Мекенжай көшірілді!');
+    }).catch(err => {
+      console.error('Көшіру кезінде қате кетті: ', err);
+    });
+  }
+
+  // 2. ХАБАРЛАМА (TOAST) КӨРСЕТУ
+  function showToast(message) {
+    const toast = document.getElementById('toastBox');
+    const msgEl = document.getElementById('toastMsg');
+    
+    msgEl.innerText = message;
+    toast.classList.add('show');
+    
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  // 3. ФОРМАНЫ ЖІБЕРУ ИМИТАЦИЯСЫ
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Беттің жаңаруын тоқтатады
+    
+    // Форманы жасырып, рахмет айтатын терезені шығару
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    
+    // Жоғарыдан да хабарлама шығару
+    showToast('Хабарлама сәтті жіберілді!');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Құпиялылық саясаты — OyinBar</title>
+  
+  <meta name="description" content="OyinBar порталының құпиялылық саясаты. Біз қолданушылардың деректерін қалай қорғаймыз және қандай ақпарат жинаймыз." />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="theme-color" content="#4fc3f7" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-primary: #0f1117;
+      --bg-secondary: #161b26;
+      --bg-card: #1c2333;
+      --bg-card-hover: #222d42;
+      --accent: #4fc3f7;
+      --accent-glow: rgba(79, 195, 247, 0.25);
+      --text-primary: #e8eaf0;
+      --text-secondary: #8b9ab5;
+      --text-muted: #4a5568;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(79, 195, 247, 0.3);
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NOISE TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 23, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+    .logo span { color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.2s;
+      margin-left: auto;
+    }
+
+    .back-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+
+    /* POLICY CONTENT */
+    .policy-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+      flex: 1;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .policy-hero {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .policy-title span { color: var(--accent); }
+
+    .policy-date {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .policy-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .policy-section {
+      margin-bottom: 40px;
+    }
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .policy-section h2::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .policy-section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .policy-section ul {
+      margin-bottom: 16px;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .policy-section li {
+      position: relative;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 10px;
+      padding-left: 14px;
+    }
+
+    .policy-section li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .policy-section a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .policy-section a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(79, 195, 247, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+      background: var(--bg-primary);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .policy-wrap { padding: 40px 16px 60px; }
+      .policy-content { padding: 24px 20px; }
+      .policy-title { font-size: 28px; }
+      .policy-section h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">OYIN<span>BAR</span></a>
+    <a href="/" class="back-btn">← Басты бетке</a>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="policy-wrap">
+  
+  <div class="policy-hero">
+    <h1 class="policy-title">Құпиялылық <span>саясаты</span></h1>
+    <div class="policy-date">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      Соңғы жаңартылған күні: 24 наурыз 2026 жыл
+    </div>
+  </div>
+
+  <div class="policy-content">
+    
+    <div class="policy-section">
+      <p>
+        OyinBar порталына (бұдан әрі – «Сайт» немесе «Біз») қош келдіңіз! Біз өз қолданушыларымыздың, соның ішінде балалар мен ересектердің жеке деректерінің қауіпсіздігі мен құпиялылығын өте жоғары бағалаймыз. Осы Құпиялылық саясаты сіз біздің сайтты пайдаланған кезде қандай ақпарат жиналатынын, оның қалай қолданылатынын және қорғалатынын түсіндіреді.
+      </p>
+      
+      <div class="highlight-box">
+        <p>Маңызды: Біздің сайт толығымен тегін және ойнау үшін ешқандай тіркелуді немесе жеке деректерді (аты-жөні, телефон нөмірі, электрондық пошта) енгізуді талап етпейді.</p>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <h2>1. Біз қандай ақпарат жинаймыз?</h2>
+      <p>Біз пайдаланушыларды тікелей анықтайтын жеке деректерді (мысалы, аты-жөні, мекенжайы, төлем реквизиттері) әдейі жинамаймыз, сақтамаймыз немесе өңдемейміз. Алайда, сайттың жұмысын жақсарту мақсатында кейбір техникалық ақпарат автоматты түрде жиналуы мүмкін:</p>
+      <ul>
+        <li><strong>Техникалық деректер:</strong> IP мекенжайы, құрылғы түрі (компьютер, планшет, смартфон), операциялық жүйе және браузер нұсқасы.</li>
+        <li><strong>Пайдалану деректері:</strong> Қай ойындарды жиі ойнайтыныңыз, сайтта өткізген уақытыңыз және қателер туралы есептер.</li>
+      </ul>
+      <p>Бұл ақпарат толығымен анонимді түрде өңделеді және сіздің жеке басыңызды анықтауға мүмкіндік бермейді.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. Cookie файлдарын пайдалану</h2>
+      <p>OyinBar порталы пайдаланушы тәжірибесін жақсарту үшін «Cookie» (куки) файлдарын пайдаланады. Cookie — бұл сіздің құрылғыңызда сақталатын шағын мәтіндік файл. Олар келесі мақсаттарда қолданылады:</p>
+      <ul>
+        <li>Сайттың негізгі функцияларының дұрыс жұмыс істеуін қамтамасыз ету.</li>
+        <li>Келушілердің статистикасын жүргізу (қанша адам кіргенін, қандай ойындар танымал екенін анықтау үшін).</li>
+        <li>Қалауларыңызды сақтау (мысалы, соңғы ойнаған ойындар тізімі немесе сайт тілі).</li>
+      </ul>
+      <p>Сіз өз браузеріңіздің баптаулары арқылы Cookie файлдарын өшіре аласыз, бірақ бұл сайттың кейбір функцияларының дұрыс жұмыс істемеуіне әкелуі мүмкін.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. Үшінші тарап сервистері (Analytics және Ойындар)</h2>
+      <p>Сайтты талдау және ойындарды көрсету үшін біз сенімді үшінші тарап сервистерін қолданамыз:</p>
+      <ul>
+        <li><strong>Аналитика:</strong> Біз сайт трафигін талдау үшін <em>Google Analytics</em> және <em>Yandex Metrika</em> сервистерін қолданамыз. Бұл сервистер анонимді статистика жинайды. Олардың өздерінің тәуелсіз құпиялылық саясаты бар.</li>
+        <li><strong>Ойын провайдерлері (iFrame):</strong> Біздің каталогтағы ойындардың басым бөлігі үшінші тарап әзірлеушілерінің серверлерінен (мысалы, GameDistribution, MadKidGames) iframe арқылы жүктеледі. Бұл ойындар ішінде өздерінің жарнамалық желілері немесе cookie файлдары болуы мүмкін. Біз үшінші тарап ойындарының ішіндегі мазмұнға немесе олардың деректер жинау саясатына тікелей жауапты емеспіз.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Балалардың құпиялылығы</h2>
+      <p>OyinBar отбасылық ойын порталы болғандықтан, біз балалардың қауіпсіздігіне аса мән береміз. Біз 13 жасқа толмаған балалардан ешқандай жеке ақпаратты әдейі сұрамаймыз немесе жинамаймыз. Егер сіз ата-ана немесе қамқоршы болсаңыз және балаңыздың бізге жеке деректер жібергенін білсеңіз, бізбен байланысыңыз. Біз ол ақпаратты дереу жүйеден өшіреміз.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Деректер қауіпсіздігі</h2>
+      <p>Біз автоматты түрде жиналған статистикалық ақпаратты жоғалудан, ұрланудан және рұқсатсыз қол жеткізуден қорғау үшін тиісті техникалық шараларды (соның ішінде HTTPS шифрлауын) қолданамыз. Біз ешқашан қолданушылар туралы ақпаратты үшінші тұлғаларға немесе жарнама агенттіктеріне сатпаймыз.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Саясатқа енгізілетін өзгерістер</h2>
+      <p>Біз осы Құпиялылық саясатын кез келген уақытта өзгерту немесе жаңарту құқығын өзімізде қалдырамыз. Барлық өзгерістер осы бетте жарияланады. Енгізілген өзгерістерден хабардар болу үшін осы бетті оқтын-оқтын тексеріп тұруға кеңес береміз. Саясат жаңартылғаннан кейін сайтты одан әрі пайдалануыңыз — сол өзгерістермен келісетініңізді білдіреді.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Бізбен байланыс</h2>
+      <p>Егер сізде осы Құпиялылық саясатына немесе сайттың жұмысына қатысты қандай да бір сұрақтар туындаса, келесі мекенжай арқылы бізбен байланыса аласыз:</p>
+      <p>Электрондық пошта: <strong>support@oyinbar.space</strong></p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <p class="footer-text">
+      © 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.<br>
+      Барлық ойындар тегін және тіркелусіз қолжетімді.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
