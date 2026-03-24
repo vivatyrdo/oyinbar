@@ -380,6 +380,100 @@
       gap: 20px;
     }
 
+    .hero {
+      position: relative;
+      padding: 80px 20px 60px; /* Немного увеличим отступы */
+      text-align: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
+
+    /* Контейнер для слайдов */
+    .hero-bg-slides {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Центрируем ряды по вертикали */
+      gap: 10px;
+      opacity: 0.18; 
+      filter: blur(4px);
+      pointer-events: none;
+      z-index: 0;
+      transform: scale(1.1); /* Немного увеличим, чтобы скрыть края при блюре */
+    }
+
+    /* Ряд картинок */
+    .hero-slide-row {
+      display: flex;
+      gap: 15px;
+      width: max-content;
+      user-select: none;
+      will-change: transform;
+    }
+
+    .hero-slide-row img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: var(--bg-card);
+    }
+
+    /* Анимация влево */
+    .row-left {
+      animation: slideLeft 60s linear infinite;
+    }
+
+    /* Анимация вправо */
+    .row-right {
+      animation: slideRight 60s linear infinite;
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    .row-1 { animation: slideLeft 70s linear infinite; }
+    .row-2 { animation: slideRight 90s linear infinite; }
+    .row-3 { animation: slideLeft 80s linear infinite; }
+
+    @keyframes slideLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-33.33%); }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(-33.33%); }
+      to { transform: translateX(0); }
+    }
+
+    /* На мобилках скрываем один ряд или уменьшаем картинки, чтобы не перегружать экран */
+    @media (max-width: 768px) {
+      .hero-slide-row img { width: 80px; height: 80px; }
+      .row-3 { display: none; } /* На маленьких экранах 2 ряда выглядят чище */
+    }
+
+    /* Затемнение краев, чтобы фон плавно уходил в темноту */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, transparent 20%, var(--bg-primary) 90%);
+      z-index: 1;
+    }
+
+    .hero-title, .hero-sub {
+      position: relative;
+      z-index: 2; /* Поднимаем текст над фоном */
+    }
+
     /* ===== GAME CARD ===== */
     .games-grid {
       content-visibility: auto;
@@ -709,6 +803,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-slides" id="heroSlides"></div>
   <h1 class="hero-title">ОЙЫН ӘЛЕМІНЕ<br><span class="accent">ХОШ КЕЛДІҢ</span></h1>
   <p class="hero-sub">Тегін онлайн ойындар — тіркелусіз, жүктеусіз</p>
 </section>
@@ -843,9 +938,49 @@ async function loadGames() {
     const res = await fetch('data/games.json');
     allGames = await res.json();
     renderGames();
+    renderHeroAnimation()
   } catch (e) {
     console.error('Ойындарды жүктеу қатесі:', e);
   }
+}
+
+function renderHeroAnimation() {
+  const container = document.getElementById('heroSlides');
+  if (!container || allGames.length < 5) return;
+
+  // 1. Перемешиваем все игры из базы
+  const shuffled = [...allGames].sort(() => 0.5 - Math.random());
+  
+  // 2. Делим их на 3 кучки (если игр мало, кучки будут пересекаться, если много — будут уникальными)
+  const chunkSize = Math.ceil(shuffled.length / 3);
+  const sets = [
+    shuffled.slice(0, chunkSize),
+    shuffled.slice(chunkSize, chunkSize * 2),
+    shuffled.slice(chunkSize * 2)
+  ];
+
+  // 3. Функция для создания ряда
+  const createRow = (gamesSubset, rowClass) => {
+    const row = document.createElement('div');
+    row.className = `hero-slide-row ${rowClass}`;
+    
+    // Дублируем набор 3 раза для бесшовной анимации
+    const items = [...gamesSubset, ...gamesSubset, ...gamesSubset];
+    
+    row.innerHTML = items.map(g => `
+      <img src="${g.thumbnail}" alt="">
+    `).join('');
+    
+    return row;
+  };
+
+  // Очищаем контейнер перед добавлением (на всякий случай)
+  container.innerHTML = '';
+
+  // Добавляем 3 ряда с разными наборами игр и направлениями
+  container.appendChild(createRow(sets[0], 'row-1'));
+  container.appendChild(createRow(sets[1], 'row-2'));
+  container.appendChild(createRow(sets[2], 'row-3'));
 }
 
 function getFilteredGames() {
