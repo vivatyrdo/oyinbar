@@ -27,7 +27,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://oyinbar.space/" />
   <meta property="og:title" content="OyinBar — Тегін Онлайн Ойындар | Қазақстан" />
-  <meta property="og:description" content="Қазақстандағы ең үздік тегін онлайн ойындар. Жарыс, атыс, спорт, аркада, қыздарға және ұлдарға арналған 30+ ойын!" />
+  <meta property="og:description" content="Қазақстандағы ең үздік тегін онлайн ойындар. Жарыс, атыс, спорт, аркада, қыздарға және ұлдарға арналған 1000+ ойын!" />
   <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
@@ -37,7 +37,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="OyinBar — Тегін Онлайн Ойындар" />
-  <meta name="twitter:description" content="Қазақстандағы ең үздік тегін онлайн ойындар порталы. 30+ ойын тіркелусіз!" />
+  <meta name="twitter:description" content="Қазақстандағы ең үздік тегін онлайн ойындар порталы. 1000+ ойын тіркелусіз!" />
   <meta name="twitter:image" content="https://oyinbar.space/icon-512.png" />
 
   <!-- Favicon -->
@@ -792,6 +792,145 @@
     .game-card {
       animation: fadeInUp 0.4s ease both;
     }
+
+    /* ===== SIDEBAR ===== */
+.page-layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.sidebar-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.sidebar-link:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.sidebar-link.active {
+  background: rgba(79, 195, 247, 0.1);
+  color: var(--accent);
+  border: 1px solid var(--border-accent);
+}
+
+.sidebar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  background: var(--bg-secondary);
+}
+
+.sidebar-link.active .sidebar-icon {
+  background: rgba(79, 195, 247, 0.15);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Мобильный sidebar — горизонтальный скролл */
+.sidebar-mobile-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.sidebar-mobile-toggle::-webkit-scrollbar { display: none; }
+
+.sidebar-mobile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.sidebar-mobile-btn:hover,
+.sidebar-mobile-btn.active {
+  border-color: var(--border-accent);
+  color: var(--accent);
+  background: rgba(79,195,247,0.08);
+}
+
+@media (max-width: 900px) {
+  .page-layout {
+    flex-direction: column;
+    padding: 0 0 40px;
+  }
+  .sidebar { display: none; }
+  .sidebar-mobile-toggle { display: flex; }
+  .main-content { padding: 0 16px; width: 100%; }
+  .games-section { padding: 0; }
+}
+
   </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
@@ -873,7 +1012,17 @@
 </div>
 
 <!-- GAMES GRID -->
-<main class="games-section">
+<div class="sidebar-mobile-toggle" id="mobileSidebarNav"></div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="desktopSidebar"></aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+  <main class="games-section" style="padding:0;max-width:none">
   <div class="section-header">
     <a class="section-title" id="sectionTitle" style="text-decoration:none;color:inherit">Барлық ойындар</a>
     <span class="games-count" id="gamesCount"></span>
@@ -884,6 +1033,8 @@
     <p>Ойын табылмады</p>
   </div>
 </main>
+</div>
+</div>
 
 <!-- SEO Text Block -->
 <section class="seo-section">
@@ -952,7 +1103,7 @@ const CATEGORY_NAMES = {
   'екеуіне': 'Екеуіне арналған'
 };
 
-const GAMES_PER_PAGE = 30;
+const GAMES_PER_PAGE = 32;
 
 let allGames = [];
 let currentFilter = 'all';
@@ -964,7 +1115,7 @@ async function loadGames() {
     const res = await fetch('data/games.json');
     allGames = await res.json();
     renderGames();
-    renderHeroAnimation()
+    renderHeroAnimation();
   } catch (e) {
     console.error('Ойындарды жүктеу қатесі:', e);
   }
@@ -1163,7 +1314,109 @@ if (urlSearch) {
   currentSearch = urlSearch;
 }
 
-loadGames();
+const SIDEBAR_ITEMS = [
+  {
+    section: 'Жылдам өту',
+    items: [
+      { id: 'all',    icon: '🎮', label: 'Барлық ойындар', action: 'filter' },
+      { id: 'top10',  icon: '🏆', label: 'Топ 10 ойын',    action: 'page', href: 'top.html?count=10' },
+      { id: 'top20',  icon: '🥇', label: 'Топ 20 ойын',    action: 'page', href: 'top.html?count=20' },
+      { id: 'random', icon: '🎲', label: 'Кездейсоқ ойын', action: 'random' },
+    ]
+  },
+  {
+    section: 'Санаттар',
+    items: [
+      { id: 'қыздарға',   icon: '👧', label: 'Қыздарға',    action: 'filter' },
+      { id: 'ұлдарға',    icon: '👦', label: 'Ұлдарға',     action: 'filter' },
+      { id: 'екеуіне',    icon: '👫', label: 'Екеуіне',     action: 'filter' },
+      { id: 'жарыс',      icon: '🏎', label: 'Жарыс',       action: 'filter' },
+      { id: 'атыс',       icon: '🔫', label: 'Атыс',        action: 'filter' },
+      { id: 'басқату',    icon: '🧩', label: 'Басқату',     action: 'filter' },
+      { id: 'спорт',      icon: '⚽', label: 'Спорт',       action: 'filter' },
+      { id: 'қорқынышты', icon: '👻', label: 'Қорқынышты',  action: 'filter' },
+      { id: 'аркада',     icon: '🕹', label: 'Аркада',      action: 'filter' },
+    ]
+  },
+  {
+    section: 'Материалдар',
+    items: [
+      { id: 'brain',    icon: '🧠', label: 'Ой ойындары',  action: 'page', href: 'brain.html' },
+      { id: 'articles', icon: '📰', label: 'Мақалалар',    action: 'page', href: 'articles.html' },
+      { id: 'guides',   icon: '📖', label: 'Гайдтар',      action: 'page', href: 'guides.html' },
+    ]
+  }
+];
+
+function renderSidebar() {
+  const desktop = document.getElementById('desktopSidebar');
+  const mobile  = document.getElementById('mobileSidebarNav');
+
+  let desktopHTML = '';
+  let mobileHTML  = '';
+
+  SIDEBAR_ITEMS.forEach(section => {
+    desktopHTML += `<div class="sidebar-section">
+      <div class="sidebar-title">${section.section}</div>`;
+
+    section.items.forEach(item => {
+      const isActive = item.id === currentFilter && item.action === 'filter';
+      const attrs = item.action === 'page'
+        ? `href="${item.href}"`
+        : `href="#" data-action="${item.action}" data-id="${item.id}"`;
+
+      desktopHTML += `
+        <a ${attrs} class="sidebar-link${isActive ? ' active' : ''}">
+          <span class="sidebar-icon">${item.icon}</span>
+          ${item.label}
+        </a>`;
+
+      // Mobile: только первые 2 секции
+      if (section.section !== 'Материалдар') {
+        mobileHTML += `
+          <a ${attrs} class="sidebar-mobile-btn${isActive ? ' active' : ''}">
+            ${item.icon} ${item.label}
+          </a>`;
+      }
+    });
+
+    desktopHTML += `</div>`;
+  });
+
+  desktop.innerHTML = desktopHTML;
+  mobile.innerHTML  = mobileHTML;
+}
+
+function handleSidebarClick(e) {
+  const link = e.target.closest('[data-action]');
+  if (!link) return;
+  e.preventDefault();
+
+  const action = link.dataset.action;
+  const id     = link.dataset.id;
+
+  if (action === 'filter') {
+    currentFilter = id;
+    currentPage   = 1;
+
+    // Sync category buttons in header
+    document.querySelectorAll('.cat-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === id);
+    });
+
+    renderGames();
+    renderSidebar();
+  }
+
+  if (action === 'random') {
+    const game = allGames[Math.floor(Math.random() * allGames.length)];
+    if (game) window.location.href = `game.html?id=${game.id}`;
+  }
+}
+
+document.addEventListener('click', handleSidebarClick);
+
+loadGames().then(() => renderSidebar());
 </script>
 
 <!-- Yandex.Metrika -->

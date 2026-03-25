@@ -371,6 +371,24 @@
       .terms-section { padding: 24px; }
       .page-title { font-size: 32px; }
     }
+
+    .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  .footer-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover {
+    color: var(--accent);
+  }
+
   </style>
 </head>
 <body>
@@ -485,6 +503,14 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">OYIN<span>BAR</span></div>
+
+    <div class="footer-nav">
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/terms.html">Пайдалану шарттары</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+
     <p class="footer-text">
       © 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.<br>
       Барлық ойындар тегін және тіркелусіз қолжетімді.
