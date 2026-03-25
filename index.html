@@ -1110,6 +1110,29 @@
   background: rgba(79, 195, 247, 0.15);
 }
 
+.drawer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.drawer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drawer::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+.drawer::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Firefox */
+.drawer {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-muted) transparent;
+}
+
 @media (max-width:900px){
   .sidebar-mobile-toggle{
     display: none;
