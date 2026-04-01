@@ -1,0 +1,160 @@
+/* =========================================
+   АНИМИРОВАННЫЙ ФОН ИЗ КАРТ
+   ========================================= */
+
+#cards-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Фон находится позади всего контента */
+  pointer-events: none; /* Игнорирует клики, чтобы не мешать сайту */
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  
+  /* Эффект размытия. На мобильных может быть тяжелым, поэтому берем среднее значение */
+  filter: blur(1px); 
+  
+  /* Прозрачность для светлой темы */
+  opacity: 0.35; 
+  transition: opacity var(--transition);
+}
+
+/* Настройка прозрачности для темной темы */
+[data-theme="dark"] #cards-bg-container {
+  opacity: 0.45;
+}
+
+.cards-bg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Аппаратное ускорение анимации */
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Колонки, двигающиеся вверх */
+.cards-bg-col.move-up {
+  animation: bg-scroll-up 35s linear infinite;
+}
+
+/* Колонки, двигающиеся вниз */
+.cards-bg-col.move-down {
+  animation: bg-scroll-down 35s linear infinite;
+}
+
+/* Ключевые кадры для бесконечного цикла */
+@keyframes bg-scroll-up {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes bg-scroll-down {
+  0% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Стили самой карты (только контур и масть) */
+.cards-bg-card {
+  width: 70px;
+  height: 105px;
+  border: 2px solid var(--text-muted);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  box-sizing: border-box;
+  opacity: 0.7;
+}
+
+.cards-bg-suit {
+  font-size: 36px;
+  line-height: 1;
+}
+
+/* Цвета мастей подтягиваем из ваших переменных */
+.cards-bg-suit.red { color: var(--accent-2); }
+.cards-bg-suit.black { color: var(--text-primary); }
+
+/* =========================================
+   АНИМИРОВАННЫЙ ФОН ИЗ КАРТ
+   ========================================= */
+
+#cards-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  
+  /* ИСПРАВЛЕНИЕ: Запрещаем колонкам сжиматься до высоты экрана */
+  align-items: flex-start; 
+  
+  filter: blur(2px); 
+  opacity: 0.35; 
+  transition: opacity var(--transition);
+}[data-theme="dark"] #cards-bg-container {
+  opacity: 0.3;
+}
+
+.cards-bg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  /* ИСПРАВЛЕНИЕ: Колонка теперь имеет реальную высоту всех карт внутри неё */
+  height: max-content; 
+  
+  will-change: transform;
+}
+
+.cards-bg-col.move-up {
+  animation: bg-scroll-up 105s linear infinite;
+}
+
+.cards-bg-col.move-down {
+  animation: bg-scroll-down 105s linear infinite;
+}
+
+@keyframes bg-scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes bg-scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.cards-bg-card {
+  width: 70px;
+  height: 105px;
+  border: 2px solid var(--text-muted);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  box-sizing: border-box;
+  opacity: 0.7;
+}
+
+.cards-bg-suit {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.cards-bg-suit.red { color: var(--accent-2); }
+.cards-bg-suit.black { color: var(--text-primary); }

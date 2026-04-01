@@ -1548,6 +1548,14 @@ const SIDEBAR_ITEMS = [
     ]
   },
   {
+    section: 'Материалдар',
+    items: [
+      { id: 'brain',    icon: '🧠', label: 'Ой ойындары',  action: 'page', href: 'brain.html' },
+      { id: 'articles', icon: '📰', label: 'Мақалалар',    action: 'page', href: 'articles.html' },
+      { id: 'guides',   icon: '📖', label: 'Гайдтар',      action: 'page', href: 'guides.html' },
+    ]
+  },
+  {
     section: 'Санаттар',
     items: [
       { id: 'қыздарға',   icon: '👧', label: 'Қыздарға',    action: 'filter' },
@@ -1560,15 +1568,8 @@ const SIDEBAR_ITEMS = [
       { id: 'қорқынышты', icon: '👻', label: 'Қорқынышты',  action: 'filter' },
       { id: 'аркада',     icon: '🕹', label: 'Аркада',      action: 'filter' },
     ]
-  },
-  {
-    section: 'Материалдар',
-    items: [
-      { id: 'brain',    icon: '🧠', label: 'Ой ойындары',  action: 'page', href: 'brain.html' },
-      { id: 'articles', icon: '📰', label: 'Мақалалар',    action: 'page', href: 'articles.html' },
-      { id: 'guides',   icon: '📖', label: 'Гайдтар',      action: 'page', href: 'guides.html' },
-    ]
   }
+  
 ];
 
 function renderSidebar() {

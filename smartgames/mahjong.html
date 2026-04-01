@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO: Правильный заголовок страницы -->
+  <title>Маджонг (Mahjong) онлайн тегін ойнау — Ой Ойындары OyinBar</title>
+  <!-- SEO: Описание страницы для поисковиков -->
+  <meta name="description" content="Маджонг онлайн тегін ойнаңыз. Тіркелусіз, жүктеп алусыз классикалық логикалық маджонг пасьянсы. Ережелері, тарихы және қазақ тіліндегі лайфхактар." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" />
+  
+  <!-- Подключаем вашу анимацию карт (убедитесь, что пути правильные: ../) -->
+  <link rel="stylesheet" href="../cards-background.css" />
+
+  <style>
+    /* Базовые переменные из вашей темы */
+    :root {
+      --accent: #4fc3f7; --accent-glow: rgba(79,195,247,0.22);
+      --bg-primary: #f0f4f8; --bg-card: #ffffff;
+      --text-primary: #1a2332; --text-secondary: #4a5d75; --text-muted: #8fa3bb;
+      --border: rgba(30,60,100,0.10); --radius-lg: 16px; --transition: 0.22s ease;
+    }
+    [data-theme="dark"] {
+      --bg-primary: #0f1117; --bg-card: #1c2333;
+      --text-primary: #e8eaf0; --text-secondary: #8b9ab5; --text-muted: #4a5568;
+      --border: rgba(255,255,255,0.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans', sans-serif; background: var(--bg-primary); color: var(--text-primary); }
+    
+    /* Шапка простая для страницы игры */
+    header { background: var(--bg-card); padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; text-decoration: none; color: var(--text-primary); }
+    .logo span { color: var(--accent); }
+    .back-btn { text-decoration: none; color: var(--text-secondary); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .back-btn:hover { color: var(--accent); }
+
+    /* Основной контейнер */
+    .game-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    
+    /* Заголовок игры */
+    .game-header { margin-bottom: 20px; }
+    .game-title { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); }
+    .game-meta { font-size: 14px; color: var(--text-muted); margin-top: 5px; }
+
+    /* Блок с Iframe */
+    .iframe-wrapper {
+      width: 100%;
+      background: #000;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      /* Адаптивность: соотношение сторон 16:9 */
+      padding-bottom: 56.25%; 
+    }
+    .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    
+    .fullscreen-btn {
+      display: inline-block; margin-top: 16px; padding: 10px 20px;
+      background: var(--accent); color: #000; font-weight: 600; font-size: 14px;
+      border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .fullscreen-btn:hover { box-shadow: 0 0 15px var(--accent-glow); transform: translateY(-2px); }
+
+    /* SEO Текст (статья) */
+    .seo-article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+    .seo-article h2 { font-family: 'Rajdhani', sans-serif; font-size: 24px; margin: 30px 0 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .seo-article h2:first-child { margin-top: 0; }
+    .seo-article p { margin-bottom: 16px; color: var(--text-secondary); font-size: 15px; }
+    .seo-article ul { margin: 0 0 20px 20px; color: var(--text-secondary); font-size: 15px; }
+    .seo-article li { margin-bottom: 8px; }
+    .seo-article strong { color: var(--text-primary); }
+    
+    .faq-item { margin-bottom: 20px; }
+    .faq-q { font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .faq-a { color: var(--text-secondary); font-size: 14.5px; }
+
+    /* Похожие игры */
+    .similar-games { margin-top: 40px; margin-bottom: 60px; }
+    .similar-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; margin-bottom: 20px; }
+    .similar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+    .sim-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; text-decoration: none; color: var(--text-primary); transition: transform 0.2s; display: flex; align-items: center; gap: 12px; }
+    .sim-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .sim-emoji { font-size: 32px; background: var(--bg-primary); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .sim-info strong { display: block; font-size: 14px; font-family: 'Rajdhani', sans-serif; }
+    .sim-info span { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+
+    @media (max-width: 768px) {
+      .seo-article { padding: 20px; }
+      .game-title { font-size: 26px; }
+      /* На мобильных делаем iframe повыше для удобства */
+      .iframe-wrapper { padding-bottom: 100%; } 
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+      flex-shrink: 0;
+    }
+    .logo span { color: var(--accent); }
+
+    .header-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      transition: all var(--transition);
+      color: var(--text-secondary);
+    }
+    .theme-toggle:hover {
+      border-color: var(--border-accent);
+      color: var(--accent);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="burger-btn" id="burgerBtn" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="../brain.html" class="logo">OYIN<span>BAR</span></a>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" title="Тақырыпты өзгерту" aria-label="Тақырыпты өзгерту">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div class="game-container">
+  
+  <div class="game-header">
+    <h1 class="game-title">Маджонг (Mahjong) онлайн ойнау</h1>
+    <div class="game-meta">Санат: Мозаика • Қиындық: Орташа • Ойыншылар: 1</div>
+  </div>
+
+  <!-- Блок с игрой -->
+  <div class="iframe-wrapper">
+    <iframe id="gameFrame" src="https://cdn.htmlgames.com/Mahjongg/index.html" allowfullscreen></iframe>
+  </div>
+  <button class="fullscreen-btn" onclick="openFullscreen()">⛶ Толық экранда ойнау</button>
+
+  <!-- СЕО Контент -->
+  <article class="seo-article">
+    <h2>Тегін Маджонг: Логика мен зейінге арналған ойын</h2>
+    <p><strong>Маджонг (Mahjong)</strong> – ежелгі Қытайдан шыққан, бүкіл әлемге танымал логикалық тақтайша ойыны. Бұл ойын зейінді шоғырландыруды, стратегиялық ойлауды және визуалды есте сақтау қабілетін дамытуға өте пайдалы. Біздің <em>OyinBar</em> сайтында сіз маджонг пасьянсын тіркелусіз, жүктеп алусыз, кез келген құрылғыдан – компьютерден немесе ұялы телефоннан тегін ойнай аласыз.</p>
+
+    <h2>Маджонгтың шығу тарихы</h2>
+    <p>Маджонгтың нақты қалай пайда болғаны туралы көптеген аңыздар бар. Бір аңыз бойынша, оны б.з.д. 500 жылы ұлы ойшыл Конфуций ойлап тапқан деседі. Ойын тастарындағы үш айдаһар Конфуцийдің үш негізгі қасиетін: мейірімділік, шынайылық және ата-ананы құрметтеуді білдіреді екен.</p>
+    <p>Дегенмен, нақты тарихи деректерге сүйенсек, қазіргі біз ойнайтын маджонг түрі XIX ғасырдың ортасында Қытайдың Цин әулеті кезінде қалыптасқан. Бастапқыда бұл тек ақсүйектерге арналған ойын болса, кейіннен қарапайым халық арасында да кеңінен таралды. ХХ ғасырдың басында ойын Батыс елдеріне, соның ішінде АҚШ пен Еуропаға жетіп, нағыз хитке айналды. Қазіргі таңда бір адамға арналған <em>"Маджонг Солитер" (Mahjong Solitaire)</em> компьютерлік нұсқасы әлемдегі ең көп ойналатын логикалық ойындардың бірі саналады.</p>
+
+    <h2>Қалай ойнау керек? (Ойын ережелері)</h2>
+    <p>Классикалық маджонгтың ережесі өте қарапайым, бірақ тақтаны толығымен тазартып шығу үшін жақсы тактика қажет. Ойынның басты мақсаты – ойын тақтасындағы барлық тастарды (фишкаларды) жұптастырып, жою.</p>
+    <ul>
+      <li><strong>Ашық тастар:</strong> Тек "ашық" тастарды ғана таңдауға болады. Яғни, тастың үстінде басқа тас болмауы керек және оның кем дегенде бір жақ шеті (оң немесе сол жағы) бос болуы тиіс.</li>
+      <li><strong>Жұптастыру:</strong> Бірдей өрнегі немесе суреті бар екі бос тасты тауып, оларды басыңыз. Сонда олар тақтадан жойылады.</li>
+      <li><strong>Ерекше тастар:</strong> Жыл мезгілдері (көктем, жаз, күз, қыс) және гүлдер бейнеленген тастарды өз араларында кез келгенімен жұптастыруға болады, олардың суреттері дәлме-дәл сәйкес келуі шарт емес.</li>
+      <li><strong>Жеңіс:</strong> Ойын тақтасында бірде-бір тас қалмаған кезде сіз жеңіске жетесіз!</li>
+    </ul>
+
+    <h2>Лайфхактар мен пайдалы кеңестер</h2>
+    <p>Ойыннан жылдам әрі қиналмай өту үшін мына стратегияларды қолданып көріңіз:</p>
+    <ul>
+      <li><strong>Жоғарғы қабаттарды босатыңыз:</strong> Үстіңгі тастар төменгі қатарларды жауып тұрады. Сондықтан ең алдымен пирамиданың төбесіндегі тастардан құтылуға тырысыңыз.</li>
+      <li><strong>Ұзын қатарларды бұзыңыз:</strong> Егер тастар ұзын қатар болып тізіліп тұрса, олардың шеткілерін бірінші кезекте алу керек, әйтпесе ортадағы тастар бұғатталып қалады.</li>
+      <li><strong>Алдын ала ойланыңыз:</strong> Бірден көзге түскен жұпты ала салуға асықпаңыз. Тақтаны мұқият қарап шығып, қай жұпты алу көбірек жаңа тастарды ашатынын есептеңіз.</li>
+      <li><strong>Көмек функциясы:</strong> Көптеген ойындарда "Көмек" (Hint) немесе "Араластыру" (Shuffle) батырмалары бар. Оларды тек тығырыққа тірелгенде ғана қолданыңыз.</li>
+    </ul>
+
+    <h2>Жиі қойылатын сұрақтар (FAQ)</h2>
+    <div class="faq-item">
+      <div class="faq-q">Сұрақ: Маджонг ойнау миға пайдалы ма?</div>
+      <div class="faq-a">Жауап: Иә, бұл ойын зейінді, көру арқылы есте сақтауды және логикалық шешім қабылдауды жақсартады. Бұл миға арналған тамаша жаттығу.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Сұрақ: Ойынды телефоннан ойнауға бола ма?</div>
+      <div class="faq-a">Жауап: Әрине! Біздің сайт толығымен мобильді құрылғыларға бейімделген. Сіз смартфоннан немесе планшеттен браузер арқылы ыңғайлы ойнай аласыз.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Сұрақ: Уақыт шектеуі бар ма?</div>
+      <div class="faq-a">Жауап: Бұл нұсқада қатаң уақыт шектеуі жоқ, сондықтан сіз асықпай, стратегияңызды мұқият ойластырып, рахаттанып ойнай аласыз.</div>
+    </div>
+  </article>
+
+  <!-- Похожие игры (Перелинковка для SEO) -->
+  <div class="similar-games">
+    <h3 class="similar-title">Ұқсас ойындар</h3>
+    <div class="similar-grid">
+      <a href="mahjong-connect.html" class="sim-card">
+        <div class="sim-emoji">🀅</div>
+        <div class="sim-info">
+          <span>Мозаика</span>
+          <strong>Маджонг Коннект</strong>
+        </div>
+      </a>
+      <a href="solitaire.html" class="sim-card">
+        <div class="sim-emoji">♠️</div>
+        <div class="sim-info">
+          <span>Пасьянс</span>
+          <strong>Пасьянс Солитер</strong>
+        </div>
+      </a>
+      <a href="sudoku.html" class="sim-card">
+        <div class="sim-emoji">🔢</div>
+        <div class="sim-info">
+          <span>Логика</span>
+          <strong>Киллер Судоку</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Скрипт для фулскрина и подключения фона -->
+<script>
+  function openFullscreen() {
+    const iframe = document.getElementById("gameFrame");
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Safari */
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE11 */
+      iframe.msRequestFullscreen();
+    }
+  }
+</script>
+
+<script src="../cards-background.js"></script>
+</body>
+</html>
