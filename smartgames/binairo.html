@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — БИНАЙРО (BINAIRO / TAKUZU) ОЙЫНЫНА АРНАЛҒАН
+  ═══════════════════════════════════════════════ -->
+  <title>Бинайро тегін онлайн ойнау — Takuzu логикалық басқатырғышы | OyinBar</title>
+  <meta name="description" content="Бинайро (Binairo / Takuzu) логикалық ойынын тегін онлайн ойнаңыз. 0 мен 1 сандарымен толтырылатын қызықты математикалық басқатырғыш. Тіркелусіз және жүктеп алусыз." />
+  <meta name="keywords" content="бинайро, takuzu онлайн, 0 мен 1 ойыны, логикалық ойындар, математикалық басқатырғыш, тегін онлайн, тіркелусіз, миды жаттықтыру, судоку стиліндегі ойындар" />
+  <link rel="canonical" href="https://oyinbar.space/smartgames/binairo.html" />
+
+  <meta property="og:title" content="Бинайро (Takuzu) тегін онлайн — OyinBar" />
+  <meta property="og:description" content="0 мен 1 сандарының жұмбағын шешіңіз! Бинайро ойынында логикаңыз бен зейініңізді сынап көріңіз." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oyinbar.space/smartgames/binairo.html" />
+  <meta property="og:locale" content="kk_KZ" />
+  <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
+  <meta name="geo.region" content="KZ" />
+
+  <!-- Schema.org — VideoGame -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Бинайро (Binairo / Takuzu)",
+    "description": "Торды 0 мен 1 сандарымен белгілі бір логикалық ережелерге сәйкес толтыруға негізделген математикалық басқатырғыш.",
+    "genre": "Логикалық / Басқатырғыш",
+    "url": "https://oyinbar.space/smartgames/binairo.html",
+    "inLanguage": "kk",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 1 },
+    "publisher": { "@type": "Organization", "name": "OyinBar", "url": "https://oyinbar.space" }
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Бинайро ойынының басты мақсаты не?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ойынның мақсаты — тордағы барлық бос ұяшықтарды 0 және 1 сандарымен толтыру. Бұл ретте әр жолда және әр бағанда 0 мен 1-дің саны тең болуы керек." }
+      },
+      {
+        "@type": "Question",
+        "name": "Үш бірдей санды қатар қоюға бола ма?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Жоқ, ереже бойынша үш бірдей санды (мысалы, 000 немесе 111) тік немесе көлденеңінен қатар қоюға қатаң тыйым салынады." }
+      },
+      {
+        "@type": "Question",
+        "name": "Бинайро мен Судокудың айырмашылығы неде?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Судоку 1-ден 9-ға дейінгі сандарды қолданса, Бинайро тек екі цифрға (0 және 1) негізделген. Бұл оны сырттай қарапайым көрсеткенімен, логикалық тұрғыдан өте терең ойынға айналдырады." }
+      },
+      {
+        "@type": "Question",
+        "name": "Жолдар мен бағандар қайталануы мүмкін бе?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Жоқ, Бинайроның маңызды ережесі — әрбір жол және әрбір баған бірегей (уникалды) болуы тиіс. Екі бірдей толтырылған жол болмауы керек." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Басты бет", "item": "https://oyinbar.space/" },
+      { "@type": "ListItem", "position": 2, "name": "Ой ойындары", "item": "https://oyinbar.space/brain.html" },
+      { "@type": "ListItem", "position": 3, "name": "Бинайро", "item": "https://oyinbar.space/smartgames/binairo.html" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/smartgames.css" />
+  <link rel="stylesheet" href="../css/smartgamestest.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XLN96J46LP');</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <!-- ҚАЙТУ БАТЫРМАСЫ -->
+    <a href="../brain.html" class="floating-back-btn" aria-label="Барлық ойындарға қайту">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Ойындар</span>
+    </a>
+
+    <a href="../brain.html" class="logo">OYIN<span>BAR</span></a>
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="/">Басты бет</a>
+      <span>›</span>
+      <a href="../brain.html">Ой ойындары</a>
+      <span>›</span>
+      <span>Бинайро</span>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Тақырыпты өзгерту">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="game-page-wrap">
+
+  <!-- ── GAME HEADER ── -->
+  <div class="game-page-header">
+    <div class="game-page-header-left">
+      <div class="game-emoji-badge">01</div>
+      <div>
+        <h1 class="game-page-title">Бинайро (Binairo / Takuzu)</h1>
+        <div class="game-page-meta">
+          <span class="meta-badge">Логика</span>
+          <span class="meta-sep">·</span>
+          <span>Қиындық:
+            <span class="diff-dots" data-level="3"></span>
+          </span>
+          <span class="meta-sep">·</span>
+          <span>1 ойыншы</span>
+        </div>
+      </div>
+    </div>
+    <button class="fullscreen-btn-header" id="fullscreenBtnHeader">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Толық экран
+    </button>
+  </div>
+
+  <!-- ── IFRAME ── -->
+  <div class="iframe-section">
+    <div class="iframe-wrapper">
+      <iframe
+        id="gameFrame"
+        src="https://cdn.htmlgames.com/DailyTakuzu/"
+        allow="fullscreen"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── CONTENT GRID ── -->
+  <div class="content-grid">
+
+    <!-- LEFT: ARTICLE -->
+    <article class="game-article">
+
+      <!-- QUICK FACTS -->
+      <div class="quick-facts">
+        <div class="qf-item">
+          <span class="qf-icon">🎯</span>
+          <div>
+            <div class="qf-label">Мақсат</div>
+            <div class="qf-value">Торды ережеге сай 0 және 1-мен толтыру</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">⏱️</span>
+          <div>
+            <div class="qf-label">Орташа уақыт</div>
+            <div class="qf-value">5–15 минут</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">🏷️</span>
+          <div>
+            <div class="qf-label">Басқа атауы</div>
+            <div class="qf-value">Takuzu, Binoxxo, Binary Puzzle</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">🧠</span>
+          <div>
+            <div class="qf-label">Пайдасы</div>
+            <div class="qf-value">Логикалық анализ, зейін қою, жады</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION 1 -->
+      <section class="article-section">
+        <h2>Бинайро (Takuzu) туралы: Екі цифрдың сиқыры</h2>
+        <p><strong>Бинайро (Binairo)</strong>, сондай-ақ <strong>Takuzu</strong> немесе <strong>Binary Puzzle</strong> деген атпен танымал бұл ойын — логикалық басқатырғыштардың ішіндегі ең тартымдыларының бірі. Егер сіз Судоку ойнағанды жақсы көрсеңіз, бірақ 9 цифрмен жұмыс істеуден шаршасаңыз, Бинайро сіз үшін нағыз олжа болмақ. Мұнда тек екі-ақ таңба бар: 0 және 1. Бірақ осы екі цифрдың комбинациясы миды шахматтағыдай жұмыс істетуге мәжбүрлейді.</p>
+        <p>Ойынның танымалдылығы соңғы жылдары еуропалық басылымдар мен онлайн порталдарда күрт өсті. Оның қарапайымдылығы мен тереңдігі адамды бірден баурап алады. Бинайро — бұл жай ғана математика емес, бұл <strong>дедукция мен заңдылықтарды тану өнері</strong>. Ойын барысында сіз әрбір жүрістің логикалық салдарына сүйене отырып, торды біртіндеп толтырасыз.</p>
+        <p>OyinBar сайтында Бинайроны <strong>тегін онлайн</strong> ойнай аласыз. Ешқандай тіркелу, жүктеп алу немесе қосымша орнату қажет емес. Браузер арқылы кез келген уақытта миыңызды жаттықтырып, күнделікті күйзелістен арылуға мүмкіндік бар.</p>
+      </section>
+
+      <!-- RULES SECTION 2 -->
+      <section class="article-section">
+        <h2>Бинайроның үш алтын ережесі</h2>
+        <p>Ойынды бастамас бұрын, оның бұлжымас үш ережесін жаттап алуыңыз керек. Бұл ережелерді сақтамасаңыз, басқатырғышты дұрыс шешу мүмкін емес:</p>
+        <ol>
+          <li><strong>Тепе-теңдік ережесі:</strong> Әрбір жолда (row) және әрбір бағанда (column) нөлдер мен бірлердің саны тең болуы керек. Мысалы, егер тор 10х10 болса, әр жолда міндетті түрде бес 0 және бес 1 болуы тиіс.</li>
+          <li><strong>Көршілестікке тыйым:</strong> Бірдей екі цифр көрші тұра алады, бірақ <strong>үш бірдей цифр</strong> (мысалы, 000 немесе 111) ешқашан тік немесе көлденеңінен қатар тұрмауы керек.</li>
+          <li><strong>Бірегейлік (Уникалдылық):</strong> Тақтадағы ешбір екі жол немесе екі баған бір-біріне толығымен ұқсас болмауы керек. Әрбір жол мен бағанның толтырылу реті бірегей болуы тиіс.</li>
+        </ol>
+      </section>
+
+      <!-- STRATEGY SECTION 3 -->
+      <section class="article-section">
+        <h2>Жеңіске жететін тактикалар мен кеңестер</h2>
+        <p>Бинайроны кәсіби деңгейде шешу үшін келесі тәсілдерді қолданыңыз:</p>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <div>
+              <strong>Жұптарды іздеңіз</strong>
+              <p>Егер сіз торда екі бірдей санды қатар көрсеңіз (мысалы, 11), олардың екі жағына бірден қарама-қарсы санды (0-ді) қойыңыз (яғни, 0110). Бұл «үштік» жасаудан сақтайды.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <div>
+              <strong>Аралықты толтыру</strong>
+              <p>Егер екі бірдей санның арасында бір бос ұяшық тұрса (мысалы, 1_1), ортаға міндетті түрде қарама-қарсы санды қойыңыз (101). Себебі ол жерге 1 қойсаңыз, 111 болып, ереже бұзылады.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <div>
+              <strong>Қалдықтарды санау</strong>
+              <p>Егер жолдағы немесе бағандағы сандардың жартысы (мысалы, бес 1-дік) қойылып бітсе, қалған барлық бос ұяшықтарға автоматты түрде қарама-қарсы санды (0-ді) толтырыңыз.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <div>
+              <strong>Жанама жоққа шығару</strong>
+              <p>Күрделі деңгейлерде «Егер мен мына жерге 0 қойсам, ереже бұзылмай ма?» деген сұрақ қойып көріңіз. Егер ол жүріс жолдағы сандар санын немесе бірегейлікті бұзса, демек ол жерге 1 қойылуы керек.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS SECTION 4 -->
+      <section class="article-section">
+        <h2>Неліктен Бинайро ойнау миға пайдалы?</h2>
+        <p>Ғалымдардың айтуынша, Бинайро сияқты логикалық басқатырғыштар мидың «жұмысшы жадын» (working memory) белсендіреді. Бұл ойынның бірнеше <strong>пайдалы тұстары</strong> бар:</p>
+        <ul>
+          <li><strong>Зейінді шыңдау:</strong> Кішкентай тордағы сандарды бақылау арқылы сіз ұсақ бөлшектерге назар аударуды үйренесіз.</li>
+          <li><strong>Шешім қабылдау жылдамдығы:</strong> Логикалық тізбектерді құру арқылы мидың ақпаратты өңдеу жылдамдығы артады.</li>
+          <li><strong>Цифрлық детокс:</strong> Әлеуметтік желілердегі мақсатсыз айналдырудан (scrolling) гөрі, Бинайро шешу миды сапалы түрде демалдырады.</li>
+          <li><strong>Дофамин:</strong> Қиын басқатырғышты шешкен кездегі жеңіс сезімі көңіл-күйді көтеріп, өзіңізге деген сенімділікті арттырады.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION 5 -->
+      <section class="article-section faq-section">
+        <h2>Жиі қойылатын сұрақтар (FAQ)</h2>
+
+        <details class="faq-item">
+          <summary class="faq-q">Бинайро ойынының басты мақсаты не?</summary>
+          <p class="faq-a">Ойынның мақсаты — тордағы барлық бос ұяшықтарды 0 және 1 сандарымен толтыру. Бұл ретте әр жолда және әр бағанда 0 мен 1-дің саны тең болуы керек.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Үш бірдей санды қатар қоюға бола ма?</summary>
+          <p class="faq-a">Жоқ, ереже бойынша үш бірдей санды (мысалы, 000 немесе 111) тік немесе көлденеңінен қатар қоюға қатаң тыйым салынады.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Бинайро мен Судокудың айырмашылығы неде?</summary>
+          <p class="faq-a">Судоку 1-ден 9-ға дейінгі сандарды қолданса, Бинайро тек екі цифрға (0 және 1) негізделген. Бұл оны сырттай қарапайым көрсеткенімен, логикалық тұрғыдан өте терең ойынға айналдырады.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Жолдар мен бағандар қайталануы мүмкен бе?</summary>
+          <p class="faq-a">Жоқ, Бинайроның маңызды ережесе — әрбір жол және әрбір баған бірегей (уникалды) болуы тиіс. Екі бірдей толтырылған жол болмауы керек.</p>
+        </details>
+      </section>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="game-sidebar">
+
+      <!-- PLAY CARD -->
+      <div class="sidebar-play-card">
+        <div class="sidebar-emoji">01</div>
+        <div class="sidebar-play-title">Бинайро</div>
+        <button class="play-now-btn" id="fullscreenBtnSidebar">
+          ▶ Толық экранда ойнау
+        </button>
+      </div>
+
+      <!-- GAME INFO -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ойын туралы</div>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-row-label">Санат</span>
+            <span class="info-row-value accent">Логика</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Ойыншылар</span>
+            <span class="info-row-value">1 ойыншы</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Қиындық</span>
+            <span class="info-row-value">
+              <span class="diff-dots" data-level="3"></span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Платформа</span>
+            <span class="info-row-value">Браузер</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ұқсас ойындар</div>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+
+      <a href="../brain.html" class="back-to-brain">← Барлық ой ойындары</a>
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <div class="footer-nav">
+      <a href="/">Ойындар</a>
+      <a href="../brain.html">Ой ойындары</a>
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+    <p class="footer-text">© 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.</p>
+  </div>
+</footer>
+
+<script src="../js/smartgames.js"></script>
+<script src="../js/smartgamestest.js"></script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108200983','ym');
+ym(108200983,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+</body>
+</html>

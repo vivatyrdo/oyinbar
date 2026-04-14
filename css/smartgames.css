@@ -1,0 +1,143 @@
+:root {
+      --accent: #4fc3f7; --accent-glow: rgba(79,195,247,0.22);
+      --bg-primary: #f0f4f8; --bg-card: #ffffff;
+      --text-primary: #1a2332; --text-secondary: #4a5d75; --text-muted: #8fa3bb;
+      --border: rgba(30,60,100,0.10); --radius-lg: 16px; --transition: 0.22s ease;
+    }
+    [data-theme="dark"] {
+      --bg-primary: #0f1117; --bg-card: #1c2333;
+      --text-primary: #e8eaf0; --text-secondary: #8b9ab5; --text-muted: #4a5568;
+      --border: rgba(255,255,255,0.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans', sans-serif; background: var(--bg-primary); color: var(--text-primary); }
+    
+    /* Шапка простая для страницы игры */
+    header { background: var(--bg-card); padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; text-decoration: none; color: var(--text-primary); }
+    .logo span { color: var(--accent); }
+    .back-btn { text-decoration: none; color: var(--text-secondary); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .back-btn:hover { color: var(--accent); }
+
+    /* Основной контейнер */
+    .game-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    
+    /* Заголовок игры */
+    .game-header { margin-bottom: 20px; }
+    .game-title { font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); }
+    .game-meta { font-size: 14px; color: var(--text-muted); margin-top: 5px; }
+
+    /* Блок с Iframe */
+    .iframe-wrapper {
+      width: 100%;
+      background: #000;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      /* Адаптивность: соотношение сторон 16:9 */
+      padding-bottom: 56.25%; 
+    }
+    .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    
+    .fullscreen-btn {
+      display: inline-block; margin-top: 16px; padding: 10px 20px;
+      background: var(--accent); color: #000; font-weight: 600; font-size: 14px;
+      border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .fullscreen-btn:hover { box-shadow: 0 0 15px var(--accent-glow); transform: translateY(-2px); }
+
+    /* SEO Текст (статья) */
+    .seo-article {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+    .seo-article h2 { font-family: 'Rajdhani', sans-serif; font-size: 24px; margin: 30px 0 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .seo-article h2:first-child { margin-top: 0; }
+    .seo-article p { margin-bottom: 16px; color: var(--text-secondary); font-size: 15px; }
+    .seo-article ul { margin: 0 0 20px 20px; color: var(--text-secondary); font-size: 15px; }
+    .seo-article li { margin-bottom: 8px; }
+    .seo-article strong { color: var(--text-primary); }
+    
+    .faq-item { margin-bottom: 20px; }
+    .faq-q { font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .faq-a { color: var(--text-secondary); font-size: 14.5px; }
+
+    /* Похожие игры */
+    .similar-games { margin-top: 40px; margin-bottom: 60px; }
+    .similar-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; margin-bottom: 20px; }
+    .similar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+    .sim-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; text-decoration: none; color: var(--text-primary); transition: transform 0.2s; display: flex; align-items: center; gap: 12px; }
+    .sim-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .sim-emoji { font-size: 32px; background: var(--bg-primary); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .sim-info strong { display: block; font-size: 14px; font-family: 'Rajdhani', sans-serif; }
+    .sim-info span { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+
+    @media (max-width: 768px) {
+      .seo-article { padding: 20px; }
+      .game-title { font-size: 26px; }
+      /* На мобильных делаем iframe повыше для удобства */
+      .iframe-wrapper { padding-bottom: 100%; } 
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+      flex-shrink: 0;
+    }
+    .logo span { color: var(--accent); }
+
+    .header-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      transition: all var(--transition);
+      color: var(--text-secondary);
+    }
+    .theme-toggle:hover {
+      border-color: var(--border-accent);
+      color: var(--accent);
+    }
+
+    

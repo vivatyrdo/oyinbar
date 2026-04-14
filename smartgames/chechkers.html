@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — ШАШКИ (CHECKERS) ОЙЫНЫНА АРНАЛҒАН
+  ═══════════════════════════════════════════════ -->
+  <title>Шашки тегін онлайн ойнау — Классикалық үстел ойыны | OyinBar</title>
+  <meta name="description" content="Шашки ойынын тегін онлайн ойнаңыз. Классикалық ережелер, әлемдік нұсқалары, жеңіске жетелейтін стратегиялық кеңестер және тіркелусіз браузерде ойнау мүмкіндігі." />
+  <meta name="keywords" content="шашки, шашки онлайн, тегін шашки ойнау, классикалық шашки, стратегиялық ойындар, үстел ойындары, логикалық ойын, тіркелусіз, миды жаттықтыру, дамка" />
+  <link rel="canonical" href="https://oyinbar.space/smartgames/checkers.html" />
+
+  <meta property="og:title" content="Шашки тегін онлайн — OyinBar" />
+  <meta property="og:description" content="Классикалық шашка ойыны енді онлайн! Дамкаға өтіп, қарсыластың барлық фишкаларын жеп қойыңыз." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oyinbar.space/smartgames/checkers.html" />
+  <meta property="og:locale" content="kk_KZ" />
+  <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
+  <meta name="geo.region" content="KZ" />
+
+  <!-- Schema.org — VideoGame -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Шашки (Checkers)",
+    "description": "64 шаршылы тақтада ойналатын, қарсыластың фишкаларын секіру арқылы жеп қоюға негізделген классикалық стратегиялық үстел ойыны.",
+    "genre": "Стратегия / Үстел ойыны",
+    "url": "https://oyinbar.space/smartgames/checkers.html",
+    "inLanguage": "kk",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2 },
+    "publisher": { "@type": "Organization", "name": "OyinBar", "url": "https://oyinbar.space" }
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Шашкада «Дамка» қалай жасалады?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Сіздің фишкаңыз тақтаның қарсы шетіне (ең соңғы қатарға) жеткенде, ол «Дамка» болып өзгереді. Дамканың кәдімгі фишкадан айырмашылығы — ол кез келген бағытта кез келген қашықтыққа диагональ бойынша жүре алады." }
+      },
+      {
+        "@type": "Question",
+        "name": "Қарсыластың фишкасын жеу міндетті ме?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Иә, шашканың көптеген классикалық ережелерінде (соның ішінде орыс және халықаралық шашкада) егер жеу мүмкіндігі болса, ойыншы міндетті түрде жеуі керек." }
+      },
+      {
+        "@type": "Question",
+        "name": "Шашканың неше түрі бар?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Әлемде шашканың ондаған түрі бар. Ең танымалдары: 64 шаршылы орыс шашкасы, 100 шаршылы халықаралық шашка және артқа қарай жеуге болмайтын ағылшын шашкасы (Draughts)." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ойынды телефоннан ойнауға бола ма?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Әрине! OyinBar сайтында шашка ойыны смартфондар мен планшеттердің браузерінде тамаша жұмыс істейді. Ешқандай тіркелу қажет емес." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Басты бет", "item": "https://oyinbar.space/" },
+      { "@type": "ListItem", "position": 2, "name": "Ой ойындары", "item": "https://oyinbar.space/brain.html" },
+      { "@type": "ListItem", "position": 3, "name": "Шашки", "item": "https://oyinbar.space/smartgames/checkers.html" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/smartgames.css" />
+  <link rel="stylesheet" href="../css/smartgamestest.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XLN96J46LP');</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <!-- ҚАЙТУ БАТЫРМАСЫ -->
+    <a href="../brain.html" class="floating-back-btn" aria-label="Барлық ойындарға қайту">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Ойындар</span>
+    </a>
+
+    <a href="../brain.html" class="logo">OYIN<span>BAR</span></a>
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="/">Басты бет</a>
+      <span>›</span>
+      <a href="../brain.html">Ой ойындары</a>
+      <span>›</span>
+      <span>Шашки</span>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Тақырыпты өзгерту">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="game-page-wrap">
+
+  <!-- ── GAME HEADER ── -->
+  <div class="game-page-header">
+    <div class="game-page-header-left">
+      <div class="game-emoji-badge">⚪</div>
+      <div>
+        <h1 class="game-page-title">Шашки (Checkers)</h1>
+        <div class="game-page-meta">
+          <span class="meta-badge">Стратегия</span>
+          <span class="meta-sep">·</span>
+          <span>Қиындық:
+            <span class="diff-dots" data-level="3"></span>
+          </span>
+          <span class="meta-sep">·</span>
+          <span>1-2 ойыншы</span>
+        </div>
+      </div>
+    </div>
+    <button class="fullscreen-btn-header" id="fullscreenBtnHeader">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Толық экран
+    </button>
+  </div>
+
+  <!-- ── IFRAME ── -->
+  <div class="iframe-section">
+    <div class="iframe-wrapper">
+      <iframe
+        id="gameFrame"
+        src="https://cdn.htmlgames.com/Checkers/"
+        allow="fullscreen"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── CONTENT GRID ── -->
+  <div class="content-grid">
+
+    <!-- LEFT: ARTICLE -->
+    <article class="game-article">
+
+      <!-- QUICK FACTS -->
+      <div class="quick-facts">
+        <div class="qf-item">
+          <span class="qf-icon">🎯</span>
+          <div>
+            <div class="qf-label">Мақсат</div>
+            <div class="qf-value">Қарсыластың барлық фишкаларын жою немесе жолын бөгеу</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">⏱️</span>
+          <div>
+            <div class="qf-label">Орташа уақыт</div>
+            <div class="qf-value">10–20 минут</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">📅</span>
+          <div>
+            <div class="qf-label">Шыққан жері</div>
+            <div class="qf-value">Ежелгі Египет (прототипі), XII ғ. Франция</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">🧠</span>
+          <div>
+            <div class="qf-label">Дамытатыны</div>
+            <div class="qf-value">Логика, комбинаторлық ойлау, алдын ала болжау</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION 1 -->
+      <section class="article-section">
+        <h2>Шашки туралы: Әлемді бағындырған интеллектуалдық ойын</h2>
+        <p><strong>Шашки (Checkers немесе Draughts)</strong> — бұл адамзат тарихындағы ең көне және ең танымал стратегиялық үстел ойындарының бірі. Оның тарихы тым тереңде жатыр: археологтар ежелгі Египет перғауындарының мазарларынан шашкаға ұқсас ойын тақталарын тапқан. Ал біз білетін заманауи шашка ережелері XII ғасырда Францияда қалыптасып, бүкіл әлемге таралды.</p>
+        <p>Шашканың қарапайымдылығы — оның басты сиқыры. Мұнда шахматтағыдай түрлі-түсті фигуралар жоқ, барлық фишкалардың күші бірдей. Бірақ осы қарапайым фишкалармен миллиондаған күрделі комбинациялар жасауға болады. Шашка — бұл тек «жеу» ойыны емес, бұл қарсыластың психологиясын түсіну және оны өз қақпаныңызға түсіру өнері.</p>
+        <p>OyinBar порталында сіз классикалық шашка ойынын <strong>тегін онлайн</strong> ойнай аласыз. Ешқандай тіркелуді немесе бағдарлама жүктеуді қажет етпейді. Біздің платформада сіз заманауи жасанды интеллектке қарсы ойнап, өзіңіздің логикалық деңгейіңізді тексере аласыз. Браузер арқылы жұмыс істейтін бұл ойын кез келген құрылғыда (компьютерде немесе телефонда) мінсіз ашылады.</p>
+      </section>
+
+      <!-- RULES SECTION 2 -->
+      <section class="article-section">
+        <h2>Қалай ойнау керек? Классикалық ережелер</h2>
+        <p>Ойын 64 шаршыдан (8х8) тұратын тақтада өтеді. Ойыншыларда 12 қара және 12 ақ фишка болады. Олар тек қара түсті торлардың үстімен ғана қозғалады:</p>
+        <ul>
+          <li><strong>Жәй жүріс:</strong> Фишкалар тек алға қарай, диагональ бойынша бір шаршыға ғана қозғала алады.</li>
+          <li><strong>Фишканы жеу (Капкан):</strong> Егер қарсыластың фишкасы сіздің фишкаңыздың қасында тұрса және оның артындағы тор бос болса, сіз оның үстінен секіріп, ол фишканы тақтадан алып тастайсыз (жейсіз). Бір жүрісте бірнеше фишканы қатарынан жеуге болады.</li>
+          <li><strong>Міндетті түрде жеу:</strong> Шашканың басты ережелерінің бірі — егер тақтада жеу мүмкіндігі тұрса, сіз одан бас тарта алмайсыз, міндетті түрде жеуіңіз керек.</li>
+          <li><strong>Дамкаға өту:</strong> Егер сіздің қарапайым фишкаңыз тақтаның ең соңғы (қарсыластың) қатарына жетсе, ол <strong>Дамкаға</strong> айналады. Дамка кез келген бағытта (алға да, артқа да) кез келген қашықтыққа диагональ бойынша ұша алады.</li>
+        </ul>
+      </section>
+
+      <!-- VARIANTS SECTION 3 -->
+      <section class="article-section">
+        <h2>Әлемдегі шашканың түрлері: Сіз қайсысын білесіз?</h2>
+        <p>Көптеген адамдар шашканың тек бір ғана түрі бар деп ойлайды. Бірақ әлемнің әртүрлі елдерінде ойын ережелері әртүрлі дамыған. Мына ең танымал түрлерін білген жөн:</p>
+        <ol>
+          <li><strong>Орыс шашкасы:</strong> 64 шаршылы тақтада ойналады. Фишкалар артқа қарай да жей береді, ал Дамка алыс қашықтыққа жүре алады. Бұл — ТМД елдеріндегі ең танымал нұсқа.</li>
+          <li><strong>Халықаралық шашка:</strong> 100 шаршылы (10х10) үлкен тақтада ойналады. Ойыншыларда 20 фишкадан болады. Бұл ресми әлем чемпионаттары өткізілетін ең күрделі нұсқа.</li>
+          <li><strong>Ағылшын шашкасы (Draughts):</strong> Мұнда қарапайым фишкаларға артқа қарай жүруге де, жеуге де болмайды. Сондай-ақ Дамка тек бір ғана шаршыға ғана жылжи алады.</li>
+          <li><strong>Түрік шашкасы:</strong> Бұл өте ерекше нұсқа. Мұнда фишкалар диагональ бойынша емес, тік және көлденең сызықтар бойынша ғана қозғалады.</li>
+        </ol>
+      </section>
+
+      <!-- STRATEGY SECTION 4 -->
+      <section class="article-section">
+        <h2>Шашка стратегиясы: Жеңіске жетелейтін тактикалар</h2>
+        <p>Шашкада жеңіске жету үшін қарсыластың жүрістерін алдын ала оқу керек. Кәсіби ойыншылар мына тактикаларды жиі қолданады:</p>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <div>
+              <strong>Орталықты иеленіңіз</strong>
+              <p>Тақтаның ортаңғы төрт шаршысын бақылауда ұстау — үлкен артықшылық. Ортада тұрған фишкалар кез келген бағытқа шабуыл жасай алады, ал шеттегі фишкалардың мүмкіндігі шектеулі.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <div>
+              <strong>Любке (Айыр) әдісі</strong>
+              <p>Өз фишкаңызды қарсыластың екі фишкасының ортасына қою арқылы бір уақытта екі фишкаға қауіп төндіріңіз. Келесі жүрісте олардың біреуін міндетті түрде жейсіз.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <div>
+              <strong>Алтын фишканы сақтаңыз</strong>
+              <p>Өзіңіздің ең соңғы қатарыңыздағы орталық фишканы (оны «алтын фишка» деп атайды) мүмкіндігінше орнынан қозғалтпаңыз. Ол қарсыластың Дамкаға өтуіне кедергі жасайтын ең соңғы қорғаныс шебі.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <div>
+              <strong>Құрбандық шалу (Жем тастау)</strong>
+              <p>Кейде Дамкаға өту немесе қарсыластың 2-3 фишкасын бірден жеу үшін өз фишкаңызды әдейі жегізіп жіберу (құрбан ету) өте тиімді стратегия болып табылады.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION 5 -->
+      <section class="article-section faq-section">
+        <h2>Жиі қойылатын сұрақтар (FAQ)</h2>
+
+        <details class="faq-item">
+          <summary class="faq-q">Шашкада «Дамка» қалай жасалады?</summary>
+          <p class="faq-a">Сіздің фишкаңыз тақтаның қарсы шетіне (ең соңғы қатарға) жеткенде, ол «Дамка» болып өзгереді. Дамканың кәдімгі фишкадан айырмашылығы — ол кез келген бағытта кез келген қашықтыққа диагональ бойынша жүре алады.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Қарсыластың фишкасын жеу міндетті ме?</summary>
+          <p class="faq-a">Иә, шашканың көптеген классикалық ережелерінде (соның ішінде орыс және халықаралық шашкада) егер жеу мүмкіндігі болса, ойыншы міндетті түрде жеуі керек.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Шашканың неше түрі бар?</summary>
+          <p class="faq-a">Әлемде шашканың ондаған түрі бар. Ең танымалдары: 64 шаршылы орыс шашкасы, 100 шаршылы халықаралық шашка және артқа қарай жеуге болмайтын ағылшын шашкасы (Draughts).</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Ойынды телефоннан ойнауға бола ма?</summary>
+          <p class="faq-a">Әрине! OyinBar сайтында шашка ойыны смартфондар мен планшеттердің браузерінде тамаша жұмыс істейді. Ешқандай тіркелу қажет емес.</p>
+        </details>
+      </section>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="game-sidebar">
+
+      <!-- PLAY CARD -->
+      <div class="sidebar-play-card">
+        <div class="sidebar-emoji">⚪</div>
+        <div class="sidebar-play-title">Шашки</div>
+        <button class="play-now-btn" id="fullscreenBtnSidebar">
+          ▶ Толық экранда ойнау
+        </button>
+      </div>
+
+      <!-- GAME INFO -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ойын туралы</div>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-row-label">Санат</span>
+            <span class="info-row-value accent">Стратегия</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Ойыншылар</span>
+            <span class="info-row-value">1-2 ойыншы</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Қиындық</span>
+            <span class="info-row-value">
+              <span class="diff-dots" data-level="3"></span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Платформа</span>
+            <span class="info-row-value">Браузер</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ұқсас ойындар</div>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+
+      <a href="../brain.html" class="back-to-brain">← Барлық ой ойындары</a>
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <div class="footer-nav">
+      <a href="/">Ойындар</a>
+      <a href="../brain.html">Ой ойындары</a>
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+    <p class="footer-text">© 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.</p>
+  </div>
+</footer>
+
+<script src="../js/smartgames.js"></script>
+<script src="../js/smartgamestest.js"></script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108200983','ym');
+ym(108200983,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+</body>
+</html>

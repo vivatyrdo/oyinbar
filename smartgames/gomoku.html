@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — ГОМОКУ (GOMOKU) ОЙЫНЫНА АРНАЛҒАН
+  ═══════════════════════════════════════════════ -->
+  <title>Гомоку тегін онлайн ойнау — Бесеуін тізу (Gomoku) | OyinBar</title>
+  <meta name="description" content="Классикалық Гомоку (Gomoku) стратегиялық ойынын тегін онлайн ойнаңыз. Бес тасты қатарға тізіңіз. Тіркелусіз, жүктеп алусыз браузерде ойнауға арналған логикалық ойын." />
+  <meta name="keywords" content="гомоку ойнау, gomoku онлайн, бес тас тізу, 5 in a row қазақша, стратегиялық ойындар, үстел ойындары, логикалық ойын, тегін онлайн ойындар, тіркелусіз, миды жаттықтыру" />
+  <link rel="canonical" href="https://oyinbar.space/smartgames/gomoku.html" />
+
+  <meta property="og:title" content="Гомоку (Gomoku) тегін онлайн — OyinBar" />
+  <meta property="og:description" content="Бесеуін тізіп, жеңіске жетіңіз! Гомоку — қарапайым ережелер мен терең стратегияның үйлесімі." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oyinbar.space/smartgames/gomoku.html" />
+  <meta property="og:locale" content="kk_KZ" />
+  <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
+  <meta name="geo.region" content="KZ" />
+
+  <!-- Schema.org — VideoGame -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Гомоку (Gomoku)",
+    "description": "Екі ойыншы кезекпен тақтаға тас қойып, өз түсіндегі бес тасты тік, көлденең немесе диагональ бойынша қатарға бірінші болып тізуді мақсат ететін стратегиялық ойын.",
+    "genre": "Стратегия / Логикалық",
+    "url": "https://oyinbar.space/smartgames/gomoku.html",
+    "inLanguage": "kk",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2 },
+    "publisher": { "@type": "Organization", "name": "OyinBar", "url": "https://oyinbar.space" }
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Гомоку мен Крестиктер-нөлдіктер ойынының айырмашылығы неде?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Крестиктер-нөлдіктер 3х3 тақтасында ойналып, 3 тасты тізуді талап етсе, Гомоку әдетте 15х15 тақтасында ойналады және жеңіс үшін 5 тасты қатарға тізу керек. Бұл оны әлдеқайда күрделі әрі стратегиялық етеді." }
+      },
+      {
+        "@type": "Question",
+        "name": "Бірінші бастаған ойыншыда артықшылық бар ма?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Иә, математикалық тұрғыдан бірінші бастаған ойыншының (қара тастар) жеңіске жету мүмкіндігі жоғары. Сондықтан кәсіби жарыстарда «Ренджу» сияқты қосымша шектеу ережелері қолданылады." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ойынды телефоннан ойнауға бола ма?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Әрине! Ойын мобильді құрылғыларға толық бейімделген. Смартфон браузері арқылы кез келген жерде тегін ойнай аласыз." }
+      },
+      {
+        "@type": "Question",
+        "name": "Алты тасты қатар тізсе, жеңіс есептеле ме?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Классикалық Гомоку ережесі бойынша тек дәл 5 тас жеңіс әкеледі. Алты немесе одан көп тас (оверлайн) кейбір нұсқаларда жеңіс деп есептелмейді немесе ойын жалғаса береді." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Басты бет", "item": "https://oyinbar.space/" },
+      { "@type": "ListItem", "position": 2, "name": "Ой ойындары", "item": "https://oyinbar.space/brain.html" },
+      { "@type": "ListItem", "position": 3, "name": "Гомоку", "item": "https://oyinbar.space/smartgames/gomoku.html" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/smartgames.css" />
+  <link rel="stylesheet" href="../css/smartgamestest.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XLN96J46LP');</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <!-- ҚАЙТУ БАТЫРМАСЫ -->
+    <a href="../brain.html" class="floating-back-btn" aria-label="Барлық ойындарға қайту">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Ойындар</span>
+    </a>
+
+    <a href="../brain.html" class="logo">OYIN<span>BAR</span></a>
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="/">Басты бет</a>
+      <span>›</span>
+      <a href="../brain.html">Ой ойындары</a>
+      <span>›</span>
+      <span>Гомоку</span>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Тақырыпты өзгерту">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="game-page-wrap">
+
+  <!-- ── GAME HEADER ── -->
+  <div class="game-page-header">
+    <div class="game-page-header-left">
+      <div class="game-emoji-badge">⬛</div>
+      <div>
+        <h1 class="game-page-title">Гомоку (Gomoku)</h1>
+        <div class="game-page-meta">
+          <span class="meta-badge">Стратегия</span>
+          <span class="meta-sep">·</span>
+          <span>Қиындық:
+            <span class="diff-dots" data-level="3"></span>
+          </span>
+          <span class="meta-sep">·</span>
+          <span>1-2 ойыншы</span>
+        </div>
+      </div>
+    </div>
+    <button class="fullscreen-btn-header" id="fullscreenBtnHeader">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Толық экран
+    </button>
+  </div>
+
+  <!-- ── IFRAME ── -->
+  <div class="iframe-section">
+    <div class="iframe-wrapper">
+      <iframe
+        id="gameFrame"
+        src="https://cdn.htmlgames.com/Gomoku/"
+        allow="fullscreen"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── CONTENT GRID ── -->
+  <div class="content-grid">
+
+    <!-- LEFT: ARTICLE -->
+    <article class="game-article">
+
+      <!-- QUICK FACTS -->
+      <div class="quick-facts">
+        <div class="qf-item">
+          <span class="qf-icon">🎯</span>
+          <div>
+            <div class="qf-label">Мақсат</div>
+            <div class="qf-value">Өз түсіңдегі 5 тасты қатарға бірінші болып тізу</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">⏱️</span>
+          <div>
+            <div class="qf-label">Орташа уақыт</div>
+            <div class="qf-value">5–15 минут</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">📅</span>
+          <div>
+            <div class="qf-label">Шыққан жері</div>
+            <div class="qf-value">Ежелгі Қытай / Жапония</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">🧠</span>
+          <div>
+            <div class="qf-label">Пайдасы</div>
+            <div class="qf-value">Зейін, тактикалық анализ, болжау қабілеті</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION 1 -->
+      <section class="article-section">
+        <h2>Гомоку туралы: Бес тастың терең стратегиясы</h2>
+        <p><strong>Гомоку (Gomoku)</strong>, сондай-ақ <strong>Five in a Row</strong> (Бесеуін тізу) деген атпен танымал — бұл әлемдегі ең көне әрі ең қызықты стратегиялық үстел ойындарының бірі. Оның шығу тарихы ежелгі Қытайға барып тіреледі, бірақ заманауи атауы мен танымалдылығын Жапонияда иеленді. Сырттай қарағанда бұл ойын балалардың «Крестиктер-нөлдіктер» ойынына ұқсас болғанымен, Гомокудың тереңдігі шахмат немесе Го ойынынан кем түспейді.</p>
+        <p>Гомоку — бұл таза <strong>интеллектуалдық жарыс</strong>. Мұнда сәттілікке орын жоқ, тек сіздің қарсыластан асып түсетін айлаңыз бен тактикаңыз маңызды. Ойын әдетте 15х15 немесе 19х19 торлы тақтада ойналады. Қарапайым ережелер мен шексіз комбинациялар Гомокуды барлық жастағы адамдар үшін таптырмас ойынға айналдырды.</p>
+        <p>OyinBar порталында сіз Гомоку ойынын <strong>тегін онлайн</strong> ойнай аласыз. Біздің платформада сіз жасанды интеллектке қарсы ойнап, шеберлігіңізді шыңдай аласыз. Тіркелусіз, жүктеп алусыз және кез келген құрылғыдан қолжетімді бұл ойын сіздің миыңызды сергітіп, логикалық ойлауыңызды жаңа деңгейге көтереді.</p>
+      </section>
+
+      <!-- RULES SECTION 2 -->
+      <section class="article-section">
+        <h2>Ойын ережелері: Бесеуін қалай тізу керек?</h2>
+        <p>Гомоку ережелері өте қарапайым, оны кез келген адам бірнеше секундта түсініп алады:</p>
+        <ul>
+          <li><strong>Бастау:</strong> Ойыншылар кезекпен тақтаның сызық қиылыстарына қара немесе ақ тастарды қояды. Әдетте бірінші жүрісті Қара тастар жасайды.</li>
+          <li><strong>Жүріс жасау:</strong> Бір қойылған тас орнынан қозғалмайды және тақтадан алынбайды.</li>
+          <li><strong>Жеңіс шарты:</strong> Өз түсіндегі 5 тасты (дәл бесеуін) тік, көлденең немесе диагональ бойынша үзіліссіз қатарға бірінші болып тізген ойыншы жеңімпаз атанады.</li>
+          <li><strong>Тең ойын:</strong> Егер тақтадағы барлық орындар толып қалып, ешкім 5 тасты тізе алмаса, ойын тең аяқталады.</li>
+        </ul>
+      </section>
+
+      <!-- STRATEGY SECTION 3 -->
+      <section class="article-section">
+        <h2>Гомоку стратегиясы: Жеңіске жететін тактикалар</h2>
+        <p>Гомокуда тек шабуыл жасау жеткіліксіз, қарсыластың қауіпті қадамдарын сезе білу маңызды. Міне, шеберлердің 4 алтын тактикасы:</p>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <div>
+              <strong>«Ашық төрттік» (Open Four)</strong>
+              <p>Екі жағы да бос тұрған 4 тастың қатарын жасауға тырысыңыз. Бұл — сөзсіз жеңіс, өйткені қарсылас тек бір жағын ғана жауып үлгереді, ал сіз екінші жағынан бесінші тасты қоясыз.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <div>
+              <strong>«Қос үштік» (Double Three) қаупі</strong>
+              <p>Бір уақытта екі жерден 3 тасты қатар құрастырыңыз. Бұл қарсыласты тығырыққа тірейді: ол бір үштікті жапқанда, сіз екінші үштікті ашық төрттікке айналдырасыз.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <div>
+              <strong>Орталықты бақылау</strong>
+              <p>Ойынды тақтаның ортасына жақын бастаңыз. Орталықта орналасқан тастардың барлық 8 бағытта да (тік, көлденең, 4 диагональ) даму мүмкіндігі әлдеқайда жоғары болады.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <div>
+              <strong>Қорғаныс — ең жақсы шабуыл</strong>
+              <p>Қарсыласыңыздың үш тасы қатар түсе бастағанда, оны бірден жауып тастаңыз. Қарсыласқа еркін 3 тас немесе жабық 4 тас жасауға мүмкіндік бермеңіз.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS SECTION 4 -->
+      <section class="article-section">
+        <h2>Неліктен Гомоку ойнау пайдалы?</h2>
+        <p>Бұл ойын тек көңіл көтеру ғана емес, ол нағыз <strong>интеллектуалдық тренажер</strong>. Гомокуды үнемі ойнау мынадай қабілеттерді дамытады:</p>
+        <ol>
+          <li><strong>Үлгілерді тану (Pattern Recognition):</strong> Тақтадағы шашыраңқы тастардың ішінен болашақ қауіпті немесе жеңісті комбинацияларды жылдам көруді үйретеді.</li>
+          <li><strong>Кеңістіктік ойлау:</strong> Диагональ бойынша жүрістерді есептеу мидың кеңістікті қабылдау бөлігін белсендіреді.</li>
+          <li><strong>Шыдамдылық:</strong> Бірден жеңуге асықпай, қарсыластың қателігін күтіп, өз тұзағыңызды ақырын құруға баулиды.</li>
+          <li><strong>Жүйелі талдау:</strong> Әрбір жүрістің салдарын ойлап, "егер мен былай жүрсем, ол былай жүреді" деген логикалық тізбекті құруды шыңдайды.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ SECTION 5 -->
+      <section class="article-section faq-section">
+        <h2>Жиі қойылатын сұрақтар (FAQ)</h2>
+
+        <details class="faq-item">
+          <summary class="faq-q">Гомоку мен Крестиктер-нөлдіктер ойынының айырмашылығы неде?</summary>
+          <p class="faq-a">Крестиктер-нөлдіктер 3х3 тақтасында ойналып, 3 тасты тізуді талап етсе, Гомоку әдетте 15х15 тақтасында ойналады және жеңіс үшін 5 тасты қатарға тізу керек. Бұл оны әлдеқайда күрделі әрі стратегиялық етеді.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Бірінші бастаған ойыншыда артықшылық бар ма?</summary>
+          <p class="faq-a">Иә, математикалық тұрғыдан бірінші бастаған ойыншының (қара тастар) жеңіске жету мүмкіндігі жоғары. Сондықтан кәсіби жарыстарда «Ренджу» сияқты қосымша шектеу ережелері қолданылады.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Ойынды телефоннан ойнауға бола ма?</summary>
+          <p class="faq-a">Әрине! Ойын мобильді құрылғыларға толық бейімделген. Смартфон браузері арқылы кез келген жерде тегін ойнай аласыз.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Алты тасты қатар тізсе, жеңіс есептеле ме?</summary>
+          <p class="faq-a">Классикалық Гомоку ережесі бойынша тек дәл 5 тас жеңіс әкеледі. Алты немесе одан көп тас (оверлайн) кейбір нұсқаларда жеңіс деп есептелмейді немесе ойын жалғаса береді.</p>
+        </details>
+      </section>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="game-sidebar">
+
+      <!-- PLAY CARD -->
+      <div class="sidebar-play-card">
+        <div class="sidebar-emoji">⬛</div>
+        <div class="sidebar-play-title">Гомоку (Gomoku)</div>
+        <button class="play-now-btn" id="fullscreenBtnSidebar">
+          ▶ Толық экранда ойнау
+        </button>
+      </div>
+
+      <!-- GAME INFO -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ойын туралы</div>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-row-label">Санат</span>
+            <span class="info-row-value accent">Стратегия</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Ойыншылар</span>
+            <span class="info-row-value">1-2 ойыншы</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Қиындық</span>
+            <span class="info-row-value">
+              <span class="diff-dots" data-level="3"></span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Платформа</span>
+            <span class="info-row-value">Браузер</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ұқсас ойындар</div>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+
+      <a href="../brain.html" class="back-to-brain">← Барлық ой ойындары</a>
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <div class="footer-nav">
+      <a href="/">Ойындар</a>
+      <a href="../brain.html">Ой ойындары</a>
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+    <p class="footer-text">© 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.</p>
+  </div>
+</footer>
+
+<script src="../js/smartgames.js"></script>
+<script src="../js/smartgamestest.js"></script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108200983','ym');
+ym(108200983,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+</body>
+</html>

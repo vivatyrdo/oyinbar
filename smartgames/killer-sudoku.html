@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO — КИЛЛЕР СУДОКУ (KILLER SUDOKU) 
+  ═══════════════════════════════════════════════ -->
+  <title>Киллер Судоку тегін онлайн ойнау — Killer Sudoku қазақша | OyinBar</title>
+  <meta name="description" content="Киллер Судоку (Killer Sudoku) — классикалық судоку мен математикалық қосындылардың жиынтығы. Ойынды тегін онлайн ойнаңыз. Тіркелусіз, жүктеп алусыз миды жаттықтыру." />
+  <meta name="keywords" content="киллер судоку, killer sudoku онлайн, математикалық судоку, логикалық ойындар, тегін басқатырғыштар, судоку ойнау, миды жаттықтыру, тіркелусіз ойындар" />
+  <link rel="canonical" href="https://oyinbar.space/smartgames/killer-sudoku.html" />
+
+  <meta property="og:title" content="Киллер Судоку (Killer Sudoku) тегін онлайн — OyinBar" />
+  <meta property="og:description" content="Математика мен логиканың шыңдалған нүктесі. Киллер Судоку жұмбағын шешіп, интеллектіңізді сынаңыз!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oyinbar.space/smartgames/killer-sudoku.html" />
+  <meta property="og:locale" content="kk_KZ" />
+  <meta property="og:image" content="https://oyinbar.space/icon-512.png" />
+  <meta name="geo.region" content="KZ" />
+
+  <!-- Schema.org — VideoGame -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Киллер Судоку (Killer Sudoku)",
+    "description": "Классикалық Судоку мен Какуро ережелерін біріктіретін күрделі логикалық-математикалық басқатырғыш.",
+    "genre": "Логикалық / Математикалық",
+    "url": "https://oyinbar.space/smartgames/killer-sudoku.html",
+    "inLanguage": "kk",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 1 },
+    "publisher": { "@type": "Organization", "name": "OyinBar", "url": "https://oyinbar.space" }
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Киллер Судоку мен қарапайым Судокудың айырмашылығы неде?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Классикалық судокуда сандар тек жолдар мен бағандарда қайталанбауы тиіс. Ал Киллер Судокуда қосымша «торлар» (cages) бар. Әр тордың ішіндегі сандардың қосындысы сол тордың бұрышында көрсетілген санға тең болуы керек." }
+      },
+      {
+        "@type": "Question",
+        "name": "Тор (Cage) ішінде сандар қайталануы мүмкін бе?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Жоқ, Киллер Судокудың қатаң ережесі бойынша бір тордың (нүктелі сызықпен қоршалған аймақ) ішінде сандар қайталанбауы тиіс." }
+      },
+      {
+        "@type": "Question",
+        "name": "«45 ережесі» деген не?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Кез келген Судокудың әрбір жолында, бағанында немесе 3х3 блогында 1-ден 9-ға дейінгі сандар бір-ақ рет кездеседі. Осы сандардың қосындысы әрқашан 45-ке тең. Бұл математикалық факт Киллер Судокуда жетіспейтін сандарды есептеп табуға көмектеседі." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ойынды жүктеп алу керек пе?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Жоқ, OyinBar сайтында Киллер Судокуды ешқандай тіркелусіз немесе жүктеп алусыз тікелей браузерде тегін ойнай аласыз." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Басты бет", "item": "https://oyinbar.space/" },
+      { "@type": "ListItem", "position": 2, "name": "Ой ойындары", "item": "https://oyinbar.space/brain.html" },
+      { "@type": "ListItem", "position": 3, "name": "Киллер Судоку", "item": "https://oyinbar.space/smartgames/killer-sudoku.html" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/smartgames.css" />
+  <link rel="stylesheet" href="../css/smartgamestest.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLN96J46LP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XLN96J46LP');</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <!-- ҚАЙТУ БАТЫРМАСЫ -->
+    <a href="../brain.html" class="floating-back-btn" aria-label="Барлық ойындарға қайту">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Ойындар</span>
+    </a>
+
+    <a href="../brain.html" class="logo">OYIN<span>BAR</span></a>
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="/">Басты бет</a>
+      <span>›</span>
+      <a href="../brain.html">Ой ойындары</a>
+      <span>›</span>
+      <span>Киллер Судоку</span>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Тақырыпты өзгерту">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="game-page-wrap">
+
+  <!-- ── GAME HEADER ── -->
+  <div class="game-page-header">
+    <div class="game-page-header-left">
+      <div class="game-emoji-badge">🔢</div>
+      <div>
+        <h1 class="game-page-title">Киллер Судоку (Killer Sudoku)</h1>
+        <div class="game-page-meta">
+          <span class="meta-badge">Логика</span>
+          <span class="meta-sep">·</span>
+          <span>Қиындық:
+            <span class="diff-dots" data-level="5"></span>
+          </span>
+          <span class="meta-sep">·</span>
+          <span>1 ойыншы</span>
+        </div>
+      </div>
+    </div>
+    <button class="fullscreen-btn-header" id="fullscreenBtnHeader">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Толық экран
+    </button>
+  </div>
+
+  <!-- ── IFRAME ── -->
+  <div class="iframe-section">
+    <div class="iframe-wrapper">
+      <iframe
+        id="gameFrame"
+        src="https://cdn.htmlgames.com/KillerSudoku/"
+        allow="fullscreen"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ── CONTENT GRID ── -->
+  <div class="content-grid">
+
+    <!-- LEFT: ARTICLE -->
+    <article class="game-article">
+
+      <!-- QUICK FACTS -->
+      <div class="quick-facts">
+        <div class="qf-item">
+          <span class="qf-icon">🎯</span>
+          <div>
+            <div class="qf-label">Мақсат</div>
+            <div class="qf-value">Торды 1-9 сандарымен қосындыларды ескере отырып толтыру</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">⏱️</span>
+          <div>
+            <div class="qf-label">Орташа уақыт</div>
+            <div class="qf-value">20–45 минут</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">📅</span>
+          <div>
+            <div class="qf-label">Шыққан жері</div>
+            <div class="qf-value">Жапония (1990-жылдар)</div>
+          </div>
+        </div>
+        <div class="qf-item">
+          <span class="qf-icon">🧠</span>
+          <div>
+            <div class="qf-label">Дамытатыны</div>
+            <div class="qf-value">Арифметика, логикалық дедукция, шыдамдылық</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT SECTION 1 -->
+      <section class="article-section">
+        <h2>Киллер Судоку туралы: Интеллектуалдық сынақтың шыңы</h2>
+        <p><strong>Киллер Судоку (Killer Sudoku)</strong> — бұл классикалық судокудың барлық ережелерін сақтай отырып, оған математикалық арифметикалық есептерді қосатын өте күрделі басқатырғыш. Ол «судоку» мен жапондық «какуро» ойындарының қосындысы десе де болады. Ойынның аты «Киллер» (өлтіруші) деп аталғанымен, ол ешкімге зиян тигізбейді, керісінше — бұл сіздің миыңызды «өлтіретіндей» (өте ауыр) жұмыс істетуге мәжбүрлейтін нағыз <strong>логикалық марафон</strong>.</p>
+        <p>Ойын алғаш рет Жапонияда танымал болғанымен, бүгінде бүкіл әлемдегі ең ақылды адамдардың сүйікті ермегіне айналды. Мұнда сізге тек сандардың орнын тауып қана қоймай, оларды қосып, азайтып, математикалық комбинацияларды есептеу керек. Бұл — миды жаттықтырудың ең тиімді әрі қызықты тәсілі.</p>
+        <p>OyinBar порталында Киллер Судокуды <strong>тегін онлайн</strong> ойнай аласыз. Ойын тіркелуді немесе бағдарлама жүктеуді қажет етпейді. Браузер арқылы кез келген уақытта интеллектуалдық деңгейіңізді сынап көруге болады.</p>
+      </section>
+
+      <!-- RULES SECTION 2 -->
+      <section class="article-section">
+        <h2>Киллер Судокудың ережелері мен ерекшеліктері</h2>
+        <p>Ойын 9х9 торлы алаңда өтеді. Негізгі ережелер классикалық судокуға ұқсас, бірақ маңызды қосымшалары бар:</p>
+        <ul>
+          <li><strong>Классикалық Судоку ережесі:</strong> Әрбір жолда, әрбір бағанда және әрбір 3х3 кіші блоктарда 1-ден 9-ға дейінгі сандар тек бір рет қана кездесуі тиіс.</li>
+          <li><strong>Торлар (Cages):</strong> Тақтада нүктелі сызықпен қоршалған аймақтар болады. Сол аймақтың ішіндегі сандардың қосындысы бұрыштағы көрсетілген санға тең болуы керек.</li>
+          <li><strong>Қайталануға тыйым:</strong> Бір тордың (cage) ішінде сандар қайталанбауы тиіс. Мысалы, егер тордың қосындысы 4-ке тең болса және ол екі ұяшықтан тұрса, ол жерде 2+2 бола алмайды, тек 1+3 болуы керек.</li>
+          <li><strong>Бос тақта:</strong> Қарапайым судокуда кейбір сандар басында берілсе, Киллер Судокуда көбінесе тақта мүлдем бос болады. Сіз бәрін нөлден бастап есептеуіңіз керек.</li>
+        </ul>
+      </section>
+
+      <!-- STRATEGY SECTION 3 -->
+      <section class="article-section">
+        <h2>Жеңіске жетелейтін кәсіби стратегиялар</h2>
+        <p>Киллер Судоку — бұл жай ғана сандарды қою емес, бұл — жоғары деңгейлі математикалық анализ. Мына тактикаларды қолданыңыз:</p>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <div>
+              <strong>«45 ережесін» (Rule of 45) қолданыңыз</strong>
+              <p>Судокудың кез келген толық жолының немесе бағанының қосындысы әрқашан 45-ке тең. Егер жолдың ішіндегі бірнеше тордың қосындысын білсеңіз, 45-тен сол қосындыларды азайту арқылы жетіспейтін ұяшықтың мәнін дәл таба аласыз.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <div>
+              <strong>Шекті комбинацияларды іздеңіз</strong>
+              <p>Кейбір қосындылардың тек бір ғана нұсқасы болады. Мысалы, 3 саны (екі ұяшық) тек 1+2 болуы мүмкін. 4 саны (екі ұяшық) тек 1+3 болуы мүмкін. Ал 17 саны (екі ұяшық) тек 8+9 бола алады. Осындай нүктелерден бастау — жеңістің кілті.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <div>
+              <strong>Кішкентай торлардан бастаңыз</strong>
+              <p>2 немесе 3 ұяшықтан тұратын торларды бірінші толтыруға тырысыңыз. Олардың нұсқалары аз болғандықтан, қателесу қаупі де төмен болады.</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <div>
+              <strong>Логикалық жоққа шығару</strong>
+              <p>Егер белгілі бір торға бір сан сәйкес келсе, оның сол жолдағы немесе бағандағы классикалық судоку ережелерін бұзбайтынына көз жеткізіңіз. «Егер мынау болмаса, онда мынау болуы тиіс» деген принциппен жұмыс істеңіз.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS SECTION 4 -->
+      <section class="article-section">
+        <h2>Неліктен Киллер Судоку ойнау пайдалы?</h2>
+        <p>Киллер Судоку — бұл жай ғана басқатырғыш емес, ол нағыз <strong>миға арналған гимнастика</strong>. Ойын барысында адамның когнитивтік қабілеттері белсенді түрде дамиды:</p>
+        <ol>
+          <li><strong>Жылдам арифметика:</strong> Сандарды үнемі қосу арқылы сіздің ауызша есептеу қабілетіңіз жақсарады.</li>
+          <li><strong>Логикалық дедукция:</strong> Күрделі жағдайлардан шығу жолын іздеу арқылы логикалық ойлау жүйесі қалыптасады.</li>
+          <li><strong>Шыдамдылық пен назар:</strong> Бір ойын 30-40 минутқа созылуы мүмкін, бұл адамды сабырлыққа және ұсақ бөлшектерге назар аударуға үйретеді.</li>
+          <li><strong>Альцгеймер ауруының алдын алу:</strong> Интеллектуалдық жаттығулар қартайған шақта мидың саулығын сақтауға көмектесетіні ғылыми дәлелденген.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ SECTION 5 -->
+      <section class="article-section faq-section">
+        <h2>Жиі қойылатын сұрақтар (FAQ)</h2>
+
+        <details class="faq-item">
+          <summary class="faq-q">Киллер Судоку мен қарапайым Судокудың айырмашылығы неде?</summary>
+          <p class="faq-a">Классикалық судокуда сандар тек жолдар мен бағандарда қайталанбауы тиіс. Ал Киллер Судокуда қосымша «торлар» (cages) бар. Әр тордың ішіндегі сандардың қосындысы сол тордың бұрышында көрсетілген санға тең болуы керек.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Тор (Cage) ішінде сандар қайталануы мүмкін бе?</summary>
+          <p class="faq-a">Жоқ, Киллер Судокудың қатаң ережесі бойынша бір тордың (нүктелі сызықпен қоршалған аймақ) ішінде сандар қайталанбауы тиіс.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">«45 ережесі» деген не?</summary>
+          <p class="faq-a">Кез келген Судокудың әрбір жолында, бағанында немесе 3х3 блогында 1-ден 9-ға дейінгі сандар бір-ақ рет кездеседі. Осы сандардың қосындысы әрқашан 45-ке тең. Бұл математикалық факт Киллер Судокуда жетіспейтін сандарды есептеп табуға көмектеседі.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Ойынды жүктеп алу керек пе?</summary>
+          <p class="faq-a">Жоқ, OyinBar сайтында Киллер Судокуды ешқандай тіркелусіз немесе жүктеп алусыз тікелей браузерде тегін ойнай аласыз.</p>
+        </details>
+      </section>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="game-sidebar">
+
+      <!-- PLAY CARD -->
+      <div class="sidebar-play-card">
+        <div class="sidebar-emoji">🔢</div>
+        <div class="sidebar-play-title">Киллер Судоку</div>
+        <button class="play-now-btn" id="fullscreenBtnSidebar">
+          ▶ Толық экранда ойнау
+        </button>
+      </div>
+
+      <!-- GAME INFO -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ойын туралы</div>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-row-label">Санат</span>
+            <span class="info-row-value accent">Логика</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Ойыншылар</span>
+            <span class="info-row-value">1 ойыншы</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Қиындық</span>
+            <span class="info-row-value">
+              <span class="diff-dots" data-level="5"></span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-row-label">Платформа</span>
+            <span class="info-row-value">Браузер</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">Ұқсас ойындар</div>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+
+      <a href="../brain.html" class="back-to-brain">← Барлық ой ойындары</a>
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+    <div class="footer-nav">
+      <a href="/">Ойындар</a>
+      <a href="../brain.html">Ой ойындары</a>
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+    <p class="footer-text">© 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.</p>
+  </div>
+</footer>
+
+<script src="../js/smartgames.js"></script>
+<script src="../js/smartgamestest.js"></script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108200983','ym');
+ym(108200983,'init',{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+</script>
+</body>
+</html>
