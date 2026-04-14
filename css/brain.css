@@ -863,3 +863,357 @@
   margin-top: 6px;
   flex: 1;
 }
+
+/* ===== GAMES GRID ===== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Карточки чуть уже, т.к. они вертикальные */
+  gap: 20px;
+}
+
+/* ===== NEW GAME CARD (POSTER STYLE) ===== */
+.game-card {
+  position: relative;
+  aspect-ratio: 4 / 5; /* Вертикальный формат постера */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--border);
+  display: block;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+/* Картинка / Фон */
+.card-thumb {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+.game-card:hover .card-thumb {
+  transform: scale(1.1); /* Плавный наезд камеры при наведении */
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+}
+
+/* Слой затемнения снизу вверх */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(10, 15, 25, 0.95) 0%, rgba(10, 15, 25, 0.6) 40%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 16px;
+  transition: background 0.3s ease;
+}
+
+.game-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(10, 15, 25, 0.98) 0%, rgba(10, 15, 25, 0.8) 60%, transparent 100%);
+}
+
+/* Всегда белый текст поверх картинок */
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px); /* Легкий эффект стекла для бейджика */
+}
+
+.card-diff {
+  display: flex;
+  gap: 3px;
+}
+.diff-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.diff-dot.filled { background: var(--accent); }
+
+.card-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.1;
+}
+
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ ТЕКСТА (Магия Grid'а) */
+.card-hover-area {
+  display: grid;
+  grid-template-rows: 0fr; /* Изначально схлопнуто */
+  opacity: 0;
+  transition: grid-template-rows 0.35s ease, opacity 0.35s ease;
+}
+.card-hover-inner {
+  overflow: hidden; /* Скрывает контент, пока row = 0fr */
+}
+
+.game-card:hover .card-hover-area {
+  grid-template-rows: 1fr; /* Раскрывается на нужную высоту */
+  opacity: 1;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+.card-play-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.card-players {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 600px) {
+  .games-grid { 
+    grid-template-columns: repeat(2, 1fr); /* Жестко 2 колонки на мобильных */
+    gap: 12px; 
+  }
+  .game-card {
+    aspect-ratio: 1 / 1; /* Делаем карточки квадратными для экономии места по высоте */
+  }
+  .card-title {
+    font-size: 16px; /* Чуть меньше шрифт заголовка */
+  }
+  .card-badge {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+}
+
+/* Медиа-запрос специально для устройств с тачскрином (Телефоны/Планшеты) */
+@media (hover: none) {
+  .card-hover-area {
+    grid-template-rows: 1fr; /* Контент всегда раскрыт */
+    opacity: 1; /* Всегда видим */
+  }
+  .card-desc {
+    display: none; /* Но само длинное описание прячем, чтобы не перекрывало пол картинки */
+  }
+  .card-overlay {
+    background: linear-gradient(to top, rgba(10, 15, 25, 0.95) 0%, transparent 80%);
+    padding: 12px; /* Меньше отступов на телефоне */
+  }
+}
+
+/* ===== GAMES GRID ===== */
+.games-grid {
+  display: grid;
+  /* УВЕЛИЧЕНО: Было 220px, теперь 280px. Карточки станут крупнее */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 20px;
+}
+
+/* ===== GAME CARD (FULL PREVIEW STYLE) ===== */
+.game-card {
+  position: relative;
+  /* ИЗМЕНЕНО: Горизонтальный формат, чтобы превью игры влезало целиком */
+  aspect-ratio: 4 / 3; 
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--border);
+  display: block;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+/* КАРТИНКА НА ВЕСЬ ФОН */
+.card-thumb {
+  position: absolute;
+  inset: 0; /* Растягивает на всю карточку */
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.game-card:hover .card-thumb {
+  transform: scale(1.08); /* Легкий зум при наведении */
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Заглушка, если нет картинки */
+.card-thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+}
+
+/* СЛОЙ ЗАТЕМНЕНИЯ И ТЕКСТА */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  /* ИЗМЕНЕНО: Градиент теперь только в самом низу карточки (от 0% до 50%) */
+  background: linear-gradient(to top, rgba(15, 17, 23, 0.95) 0%, rgba(15, 17, 23, 0.4) 35%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 20px 16px;
+  transition: background 0.3s ease;
+}
+
+.game-card:hover .card-overlay {
+  /* При наведении градиент чуть поднимается, чтобы текст читался лучше */
+  background: linear-gradient(to top, rgba(15, 17, 23, 0.98) 0%, rgba(15, 17, 23, 0.75) 60%, transparent 100%);
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.card-diff {
+  display: flex;
+  gap: 3px;
+}
+.diff-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.diff-dot.filled { background: var(--accent); }
+
+.card-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ ОПИСАНИЯ */
+.card-hover-area {
+  display: grid;
+  grid-template-rows: 0fr; 
+  opacity: 0;
+  transition: grid-template-rows 0.35s ease, opacity 0.35s ease;
+}
+.card-hover-inner {
+  overflow: hidden; 
+}
+
+.game-card:hover .card-hover-area {
+  grid-template-rows: 1fr; 
+  opacity: 1;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Оставляем только 2 строчки описания */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+.card-play-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.card-players {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
