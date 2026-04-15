@@ -126,37 +126,40 @@ function renderGames() {
 
   noResults.classList.remove('visible');
 
+  // ОБНОВЛЕННАЯ СТРУКТУРА КАРТОЧКИ (Без перегруза)
   grid.innerHTML = games.map((g, i) => {
-    const cats = g.categories || [g.category];
-    const primaryCat = cats[0];
-    const extraCats = cats.slice(1, 3); // show up to 2 extra badges
+    // Берем только самую первую, главную категорию
+    const primaryCat = (g.categories && g.categories[0]) || g.category || 'аркада';
+    
     return `
     <a href="game.html?id=${g.id}"
        class="game-card${g.featured ? ' featured' : ''}"
-       style="animation-delay:${i * 0.05}s"
+       style="animation-delay:${i * 0.04}s"
        aria-label="${g.title_kz} ойынын ойна">
+       
       <div class="card-thumb">
         <img src="${g.thumbnail}" alt="${g.title_kz}" loading="lazy"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="thumb-placeholder" style="display:none"></div>
-        <div class="play-overlay">
-          <div class="play-btn-icon">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
+        <div class="thumb-placeholder" style="display:none; width:100%; height:100%; background:#222; align-items:center; justify-content:center; font-size:40px;">🎮</div>
       </div>
-      <div class="card-body">
-        <div class="card-cats">
+
+      <div class="card-overlay">
+        <!-- Только один аккуратный бейджик -->
+        <div class="card-meta">
           <span class="card-cat" data-cat="${primaryCat}">
             <span class="cat-dot dot-${primaryCat}"></span>
             ${CATEGORY_NAMES[primaryCat] || primaryCat}
           </span>
-          ${extraCats.map(c => `<span class="card-cat card-cat-sm" data-cat="${c}"><span class="cat-dot dot-${c}"></span>${CATEGORY_NAMES[c] || c}</span>`).join('')}
         </div>
+        
         <div class="card-title">${g.title_kz}</div>
-        <div class="card-desc">${g.description_kz}</div>
-        <div class="card-footer">
-          <span class="card-play-btn">▶ ОЙНАУ</span>
+        
+        <!-- Всплывающий блок (будет скрыт на мобильных) -->
+        <div class="card-hover-area">
+          <div class="card-hover-inner">
+            <div class="card-desc">${g.description_kz}</div>
+            
+          </div>
         </div>
       </div>
     </a>`;
