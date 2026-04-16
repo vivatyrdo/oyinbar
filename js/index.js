@@ -250,6 +250,7 @@ const SIDEBAR_ITEMS = [
     section: 'Материалдар',
     items: [
       { id: 'brain',    icon: '🧠', label: 'Ой ойындары',  action: 'page', href: 'brain.html' },
+      { id: 'shooter',    icon: '🧠', label: 'Шутер',  action: 'page', href: 'shooters.html' },
       { id: 'articles', icon: '📰', label: 'Мақалалар',    action: 'page', href: 'articles.html' },
       { id: 'guides',   icon: '📖', label: 'Гайдтар',      action: 'page', href: 'guides.html' },
     ]

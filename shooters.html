@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шутеры — OyinBar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/shooters.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="header__container">
+
+      <!-- Кнопка «Домой» -->
+      <a href="/" class="header__home-btn" aria-label="Басты бет">
+        <!-- SVG-иконка дома -->
+        <svg class="header__home-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span class="header__home-text">Басты бет</span>
+      </a>
+
+      <!-- Поисковая строка -->
+      <div class="header__search">
+        <svg class="header__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          class="header__search-input"
+          placeholder="Ойын іздеу..."
+          autocomplete="off"
+          aria-label="Ойын іздеу"
+        >
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <!-- Фоновое изображение -->
+    <div class="hero__bg"></div>
+
+    <!-- Градиентные затемнения -->
+    <div class="hero__overlay"></div>
+
+    <!-- Контент по центру -->
+    <div class="hero__content">
+      <h1 class="hero__title">Атыс ойындары</h1>
+      <p class="hero__subtitle">Онлайн шутерлерді тегін ойна</p>
+      <a href="#games" class="hero__cta">
+        <span>Қазір ойнау</span>
+        <svg class="hero__cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Плавный скролл-индикатор -->
+    
+  </section>
+
+  <section class="featured-slider" id="featured">
+  <div class="featured-slider__container">
+    <h2 class="featured-slider__heading">🔥 Танымал шутерлер</h2>
+
+    <div class="slider-wrapper" id="sliderWrapper">
+  
+  <!-- Трек слайдов (ТОЛЬКО слайды, ничего больше!) -->
+  <div class="slider__track" id="sliderTrack">
+    <article class="slide">
+      <div class="slide__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="CS2" loading="lazy">
+        <div class="slide__image-overlay"></div>
+      </div>
+      <div class="slide__content">
+        <span class="slide__tags">FPS • Мультиплеер • Онлайн</span>
+        <h3 class="slide__title">Counter-Strike 2</h3>
+        <p class="slide__desc">Легендарлық тактикалық шутердің жаңа буыны. Жаңа движік, жақсартылған физика және динамикалық түтін жүйесі.</p>
+        <div class="slide__actions">
+          <button class="btn btn--primary">Ойнау</button>
+          <button class="btn btn--secondary">Толығырақ</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="slide">
+      <div class="slide__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="CS2" loading="lazy">
+        <div class="slide__image-overlay"></div>
+      </div>
+      <div class="slide__content">
+        <span class="slide__tags">FPS • Мультиплеер • Онлайн</span>
+        <h3 class="slide__title">Counter-Strike 2</h3>
+        <p class="slide__desc">Легендарлық тактикалық шутердің жаңа буыны. Жаңа движік, жақсартылған физика және динамикалық түтін жүйесі.</p>
+        <div class="slide__actions">
+          <button class="btn btn--primary">Ойнау</button>
+          <button class="btn btn--secondary">Толығырақ</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="slide">
+      <div class="slide__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="CS2" loading="lazy">
+        <div class="slide__image-overlay"></div>
+      </div>
+      <div class="slide__content">
+        <span class="slide__tags">FPS • Мультиплеер • Онлайн</span>
+        <h3 class="slide__title">Counter-Strike 2</h3>
+        <p class="slide__desc">Легендарлық тактикалық шутердің жаңа буыны. Жаңа движік, жақсартылған физика және динамикалық түтін жүйесі.</p>
+        <div class="slide__actions">
+          <button class="btn btn--primary">Ойнау</button>
+          <button class="btn btn--secondary">Толығырақ</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="slide">
+      <div class="slide__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="CS2" loading="lazy">
+        <div class="slide__image-overlay"></div>
+      </div>
+      <div class="slide__content">
+        <span class="slide__tags">FPS • Мультиплеер • Онлайн</span>
+        <h3 class="slide__title">Counter-Strike 2</h3>
+        <p class="slide__desc">Легендарлық тактикалық шутердің жаңа буыны. Жаңа движік, жақсартылған физика және динамикалық түтін жүйесі.</p>
+        <div class="slide__actions">
+          <button class="btn btn--primary">Ойнау</button>
+          <button class="btn btn--secondary">Толығырақ</button>
+        </div>
+      </div>
+    </article>
+    <!-- Остальные 4 слайда... -->
+  </div>
+
+  <!-- Контролы (стрелки + точки) — ОТДЕЛЬНО, после трека -->
+  <div class="slider__controls">
+    <button class="slider__arrow slider__arrow--prev" aria-label="Алдыңғы слайд" id="prevBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    
+    <div class="slider__dots" id="sliderDots"></div>
+    
+    <button class="slider__arrow slider__arrow--next" aria-label="Келесі слайд" id="nextBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<!-- ==================== GALLERY SECTION ==================== -->
+  <section class="games-gallery" id="games">
+    <div class="games-gallery__container">
+      <h2 class="games-gallery__heading">Барлық атыс ойындары</h2>
+      
+      <div class="games-gallery__filters">
+        <button class="filter-btn filter-btn--active">Барлығы</button>
+        <button class="filter-btn">Танымал</button>
+        <button class="filter-btn">Жаңалар</button>
+        <button class="filter-btn">Рейтинг бойынша</button>
+      </div>
+
+      <div class="games-grid" id="gamesGrid">
+        <!-- 8 карточек -->
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="CS2" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="CS2">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Counter-Strike 2</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.9</span><span class="game-card__players">👥 2.1M</span></div>
+            <p class="game-card__desc">Легендарлық тактикалық шутердің жаңа буыны.</p>
+            <button class="btn game-card__action-btn" data-game="CS2">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80" alt="VALORANT" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="VALORANT">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">VALORANT</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.8</span><span class="game-card__players">👥 1.5M</span></div>
+            <p class="game-card__desc">Дәлдік пен агент қабілеттеріне негізделген шутер.</p>
+            <button class="btn game-card__action-btn" data-game="VALORANT">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=600&q=80" alt="Apex Legends" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="Apex Legends">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Apex Legends</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.7</span><span class="game-card__players">👥 850K</span></div>
+            <p class="game-card__desc">Жылдам қозғалыс пен командалық стратегияны біріктіреді.</p>
+            <button class="btn game-card__action-btn" data-game="Apex Legends">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" alt="Warzone" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="Warzone">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Call of Duty: Warzone</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.6</span><span class="game-card__players">👥 1.2M</span></div>
+            <p class="game-card__desc">Ауқымды карта мен шексіз экшн. Тегін жүктеп, ойна.</p>
+            <button class="btn game-card__action-btn" data-game="Warzone">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c29736cec7?auto=format&fit=crop&w=600&q=80" alt="Overwatch 2" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="Overwatch 2">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Overwatch 2</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.5</span><span class="game-card__players">👥 650K</span></div>
+            <p class="game-card__desc">Рөлдік шутер. Командадағы синергия жеңіске жеткізеді.</p>
+            <button class="btn game-card__action-btn" data-game="Overwatch 2">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?auto=format&fit=crop&w=600&q=80" alt="Escape from Tarkov" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="Escape from Tarkov">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Escape from Tarkov</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.8</span><span class="game-card__players">👥 420K</span></div>
+            <p class="game-card__desc">Реалистік лут-шутер. Қауіп пен мінсіз тактика.</p>
+            <button class="btn game-card__action-btn" data-game="Escape from Tarkov">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=600&q=80" alt="Rainbow Six Siege" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="Rainbow Six">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">Rainbow Six Siege</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.7</span><span class="game-card__players">👥 550K</span></div>
+            <p class="game-card__desc">Қирату тактикасы мен қорғаныс шеберлігі сыналады.</p>
+            <button class="btn game-card__action-btn" data-game="Rainbow Six">Ойнау</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1627856014759-085299029900?auto=format&fit=crop&w=600&q=80" alt="PUBG" loading="lazy">
+            <div class="game-card__overlay"><button class="game-card__hover-btn" data-game="PUBG">Ойнау</button></div>
+          </div>
+          <div class="game-card__info">
+            <h3 class="game-card__title">PUBG: Battlegrounds</h3>
+            <div class="game-card__meta"><span class="game-card__rating">⭐ 4.4</span><span class="game-card__players">👥 3.8M</span></div>
+            <p class="game-card__desc">Классикалық батл-рояль. 100 ойыншы, тек біреуі тірі қалады.</p>
+            <button class="btn game-card__action-btn" data-game="PUBG">Ойнау</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <div class="footer-inner">
+    <div class="footer-logo">OYIN<span>BAR</span></div>
+
+    <div class="footer-nav">
+      <a href="/about.html">Біз туралы</a>
+      <a href="/privacy.html">Құпиялылық саясаты</a>
+      <a href="/terms.html">Пайдалану шарттары</a>
+      <a href="/contact.html">Кері байланыс</a>
+    </div>
+
+    <p class="footer-text">
+      © 2026 OyinBar — Қазақстандағы ең үздік тегін онлайн ойындар порталы.<br>
+      Барлық ойындар тегін және тіркелусіз қолжетімді.
+    </p>
+  </div>
+</footer>
+
+  <script src="js/shooters.js"></script>
+</body>
+</html>
